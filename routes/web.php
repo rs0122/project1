@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('info/create', 'Admin\InfoController@add');
+    Route::get('info/create', 'Admin\InfoController@add')->middleware('auth');
 });
 Auth::routes();
 
