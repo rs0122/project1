@@ -4,22 +4,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInfoTable extends Migration
+class CreateInformationTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    
-     
     public function up()
     {
-        Schema::create('info', function (Blueprint $table) {
+        Schema::create('information', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('body');
-            $table->string('image-path')->nullable();
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('info');
+        Schema::dropIfExists('information');
     }
 }

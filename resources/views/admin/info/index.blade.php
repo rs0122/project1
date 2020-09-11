@@ -34,6 +34,7 @@
                                 <th width="10%">ID</th>
                                 <th width="20%">タイトル</th>
                                 <th width="50%">本文</th>
+                                <th width="10%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,6 +43,14 @@
                                 <th>{{ $info->id }}</th>
                                 <td>{{ \Str::limit($info->title, 100) }}</td>
                                 <td>{{ \Str::limit($info->body, 250) }}</td>
+                                <td>
+                                    <div>
+                                        <a href="{{ action('Admin\InfoController@edit', ['id' => $info->id]) }}">編集</a>
+                                    </div>
+                                    <div>
+                                        <a href="{{ action('Admin\InfoController@delete', ['id' => $info->id]) }}">削除</a>
+                                    </div>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

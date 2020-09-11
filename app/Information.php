@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Info extends Model
+class Information extends Model
 {
+    //
     protected $guarded = array('id');
     
     public static $rules = array(
         'title' => 'required',
-        'body' => 'required'
-        );
+        'body' => 'required',
+    );
 }

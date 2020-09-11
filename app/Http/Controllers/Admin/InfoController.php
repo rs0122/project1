@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Info;
+use App\Information;
 
 class InfoController extends Controller
 {
@@ -17,23 +17,23 @@ class InfoController extends Controller
     
     public function create(Request $request)
     {
-        $this->validate($request, Info::$rules);
+        $this->validate($request, Information::$rules);
         
-        $info = new Info;
+        $information = new Information;
         $form = $request->all();
         
         if (isset($form['image'])) {
             $path = $request->file('image')->store('public/image');
-            $info->image_path = basename($path);
+            $information->image_path = basename($path);
         } else {
-            $info->image_path = null;
+            $information->image_path = null;
         }
         
         unset($form['_token']);
         unset($form['image']);
         
-        $info->fill($form);
-        $info->save();
+        $information->fill($form);
+        $information->save();
         
         return redirect('admin/info/create');
     }
@@ -42,11 +42,45 @@ class InfoController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $post = Info::where('title', $cond_title)->get();
+            $post = Information::where('title', $cond_title)->get();
         } else {
-            $posts = Info::all();
+            $posts = Information::all();
         }
         return view('admin.info.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
     
+    public function edit(Request $request)
+    {
+        $information = Information::find($request->id);
+        if (empty($information)) {
+            abort(404);
+        }
+        return view('admin.info.edit', ['information_form' =>$information]);
+    }
+    
+    public function update(Request $request)
+    {
+        $this->validate($request, Information::$rules);
+        $information = Information::find($request->id);
+        $information_form =$request->all();
+        if (isset($information_form['image'])) {
+            $path = $request->file('image')->store('public/image');
+            $information ->image_path = basename($path);
+            unset($information_form['image']);
+        } elseif (isset($request->remove)) {
+            $information->image_path = null;
+            unset($information_form['remove']);
+        }
+        unset($information_form['_token']);
+        $information->fill($information_form)->save();
+        
+        return redirect('admin/info');
+    }
+    
+    public function delete(Request $request)
+    {
+        $information = Information::find($request->id);
+        $information->delete();
+        return redirect('admin/info/');
+    }
 }
