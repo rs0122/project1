@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Information;
+use Carbon\Carbon;
+use App\History;
 
 class InfoController extends Controller
 {
@@ -73,6 +75,11 @@ class InfoController extends Controller
         }
         unset($information_form['_token']);
         $information->fill($information_form)->save();
+        
+        $history = new History;
+        $history->information_id = $information->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
         
         return redirect('admin/info');
     }
