@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="mainVidulal col-md-10">
-                <h1>Let's start your new Life!</h1>
+            <div class="mainVidulal col-md-12　mx-auto">
+                <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
+                    <div class="top-message">
+                        <h1>Let's start your new Life!</h1>
+                    </div>
             </div>
         </div>
         <hr color="#c0c0c0">
@@ -20,7 +23,7 @@
                                     @endif
                                 </div>
                                 <div class="title p-2">
-                                    <h1>{{ str_limit($headline->title, 70) }}</h1>
+                                    <h2>{{ str_limit($headline->title, 70) }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -59,6 +62,5 @@
                 @endforeach
             </div>
         </div>
-    </div>
     </div>
 @endsection

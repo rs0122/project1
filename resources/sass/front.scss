@@ -57,9 +57,14 @@ body {
 }
 
 .mainVidulal{
-  background-image: url(/storage/夜景画像.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center center;
+  bacground-image: url("/storage/夜景画像.jpg") center center;
+    background-size:cover;
+    height:700px;
+    text-align:center;
+    width:auto;
+    margin-top:70px;
+    .h1{
+      font-color: #ffffff;
+    }
+  
 }
