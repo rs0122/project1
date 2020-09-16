@@ -6,6 +6,7 @@ body {
 
 .mainvidulal{
     position: relative;
+    text-align: center;
 }
 
 #mainVideo{
@@ -82,13 +83,17 @@ body {
     width: 100%;
 }
 
-.contents .item {
-    /*width: 300px;*/
+.contents .item img{
+    width: 100%;
     height: 200px;
     float: left;
+    
 }
 
 .contents .col-md-3 {
     padding: 15px 0;
 }
 
+.contents .col-md-12 {
+    margin: 0 15px;
+}
