@@ -56,15 +56,16 @@ body {
   }
 }
 
-.mainVidulal{
-  bacground-image: url("/storage/夜景画像.jpg") center center;
-    background-size:cover;
-    height:700px;
-    text-align:center;
-    width:auto;
-    margin-top:70px;
-    .h1{
-      font-color: #ffffff;
-    }
-  
+#mainVideo{
+ position: absolute;
+ left: 0;
+ top: 0;
+ /*min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;*/
+ width: 100%;
+ height: 100%;
+ z-index: -100;
+ display: block;
 }

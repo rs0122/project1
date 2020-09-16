@@ -1,13 +1,19 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="container">
         <div class="row">
-            <div class="mainVidulal col-md-12　mx-auto">
+            <div class="mainVidulal col-md-12">
                 <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
-                    <div class="top-message">
-                        <h1>Let's start your new Life!</h1>
-                    </div>
+                  
+            </div>
+                <h1 class="top-message">Let's start your new Life!</h1>
+        </div>
+        <div class="row">
+            <div class="contents col-md-11 mx-auto">
+                        <img src="storage/ジオ.jpg" class="item col-md-3">
+                        <img src="storage/パークハウス.jpg" class="item col-md-3">
+                        <img src="storage/ブランズ.jpg" class="item col-md-3">
+                        <img src="storage/プラウド.jpg" class="item col-md-3">
             </div>
         </div>
         <hr color="#c0c0c0">
