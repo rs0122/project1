@@ -29,4 +29,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'InfoController@index');
 
-Route::post('/map', 'InfoController@map');
+Route::post('info/map', 'InfoController@map');

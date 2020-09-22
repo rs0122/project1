@@ -13,7 +13,7 @@
                         <input type="text" name="name" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                         <div class="text-center">
-                            <button type="button" class="btn-dark" id="search" onclick="location.href='{{ action('InfoController@map') }}'">Search!</button>
+                            <button type="button" class="btn-dark" id="search">Search!</button>
                         </div>
                       </div>
                     </div>
