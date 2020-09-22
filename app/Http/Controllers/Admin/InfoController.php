@@ -91,9 +91,5 @@ class InfoController extends Controller
         return redirect('admin/info/');
     }
     
-     public function map()
-    {
-        return view('info.map');
-    }
     
 }

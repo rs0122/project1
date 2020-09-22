@@ -22,4 +22,9 @@ class InfoController extends Controller
         return view('info.index', ['headline' => $headline, 'posts' => $posts]);
         
     }
+    
+     public function map()
+    {
+        return view('info.map');
+    }
 }
