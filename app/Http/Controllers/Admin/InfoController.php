@@ -90,4 +90,10 @@ class InfoController extends Controller
         $information->delete();
         return redirect('admin/info/');
     }
+    
+     public function map()
+    {
+        return view('info.map');
+    }
+    
 }

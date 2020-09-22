@@ -6,13 +6,14 @@
                 <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
             </div>
                 <h1 class="top-message">Let's start your new Life!</h1>
-                <form action="forms/notify.php" method="post" role="form" class="php-email-form">
+                <form action="{{ action('InfoController@map') }}" method="post" role="form" class="php-email-form">
+                    @csrf
                     <div class="row no-gutters">
                       <div class="col-md-6 form-group mx-auto">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <input type="text" name="name" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                         <div class="text-center">
-                            <button type="button" class="btn-dark">Search!</button>
+                            <button type="button" class="btn-dark" id="search" onclick="location.href='{{ action('InfoController@map') }}'">Search!</button>
                         </div>
                       </div>
                     </div>
@@ -102,27 +103,6 @@
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 mx-auto">
-                <div id="map" style="height: 500px; width: 80%; margin: 2rem auto 0;"></div>
-
-
-        <!-- jqueryの読み込む -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- google map api -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJzlLTLYrvAyFJOe6htRitJDAUSNlQViw"></script>
-        <!-- js -->
-        <script type="text/javascript">
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: {
-            lat: -34.397, //緯度を設定
-            lng: 150.644 //経度を設定
-            },
-            zoom: 8 //地図のズームを設定
-        });
-        </script>
             </div>
         </div>
 @endsection
