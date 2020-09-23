@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('info/create', 'Admin\InfoController@add');
@@ -29,4 +26,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'InfoController@index');
 
-Route::post('info/map', 'InfoController@map');
+Route::post('/map', 'InfoController@map');

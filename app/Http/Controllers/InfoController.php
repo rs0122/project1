@@ -23,7 +23,7 @@ class InfoController extends Controller
         
     }
     
-     public function map()
+     public function map(Request $request)
     {
         return view('info.map');
     }

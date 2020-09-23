@@ -6,14 +6,14 @@
                 <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
             </div>
                 <h1 class="top-message">Let's start your new Life!</h1>
-                <form action="{{ action('InfoController@map') }}" method="post" role="form" class="php-email-form">
+                <form action="{{ action('InfoController@map') }}" method="post" enctype="multipart/form-data" class="php-email-form">
                     @csrf
                     <div class="row no-gutters">
                       <div class="col-md-6 form-group mx-auto">
                         <input type="text" name="name" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                         <div class="text-center">
-                            <button type="button" class="btn-dark" id="search">Search!</button>
+                            <input type="submit" class="btn-dark" id="search">
                         </div>
                       </div>
                     </div>
