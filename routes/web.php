@@ -27,3 +27,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'InfoController@index');
 
 Route::post('/map', 'InfoController@map');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('condo/create', 'Admin\CondoController@add');
+    Route::post('condo/create', 'Admin\CondoController@create');
+    Route::get('condo', 'Admin\CondoController@index');
+});

@@ -148,3 +148,16 @@ body {
 .text-center {
     margin-top: 10px;
 }
+
+.collapse .navbar-nav .new-register {
+    font-size: 5px;
+}
+
+.collapse .navbar-nav .regis {
+    color: blue;
+}
+
+.collapse .navbar-nav .login-form{
+    flex-direction: column;
+    text-align: center;
+}
