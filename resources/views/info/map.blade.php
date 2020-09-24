@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="row">
+  <div id="header"><b>Google Maps - 場所検索</b></div>
+    <div>施設名称検索 （例：マチュピチュ、万里の長城）</div>
+    <input type="text" id="keyword"><button id="search">検索実行</button>
+    <button id="clear">結果クリア</button>
+    <div id="target"></div>
     <div class="col-md-12 mx-auto">
         <div id="map" style="height: 500px; width: 80%; margin: 2rem auto 0;"></div>
 
