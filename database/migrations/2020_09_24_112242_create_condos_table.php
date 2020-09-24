@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondoTable extends Migration
+class CreateCondosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCondoTable extends Migration
      */
     public function up()
     {
-        Schema::create('condo', function (Blueprint $table) {
+        Schema::create('condos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('condo');
             $table->string('price');
@@ -33,6 +33,6 @@ class CreateCondoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condo');
+        Schema::dropIfExists('condos');
     }
 }
