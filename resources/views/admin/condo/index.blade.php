@@ -50,6 +50,14 @@
                                     <td>{{ \Str::limit($condos->area, 20) }}</td>
                                     <td>{{ \Str::limit($condos->plan, 10) }}</td>
                                     <td>{{ \Str::limit($condos->old, 20) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\CondoController@edit', ['id' => $condos->id]) }}">編集</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\CondoController@delete', ['id' => $condos->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
