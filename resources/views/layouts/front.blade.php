@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet" type="text/css">
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/cfront.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -34,7 +35,7 @@
                 Dropdown
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="{{ url('/condo') }}">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Something else here</a>

@@ -36,3 +36,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('condo/edit', 'Admin\Controller@update');
     Route::get('condo/delete', 'Admin\Controller@delete');
 });
+
+Route::get('/condo', 'CondoController@index');
