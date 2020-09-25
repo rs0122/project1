@@ -10,17 +10,18 @@
         <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
-                <div class="headline col-md-10 mx-auto">
+                <div class="headline col-md-12 mx-auto">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
+                                        <h2>New!</h2>
                                         <img src="{{ asset('storage/image/' . $headline->image_path) }}">
                                     @endif
                                 </div>
                                 <div class="condo p-2">
-                                    <h2>{{ str_limit($headline->condo, 20) }}</h2>
+                                    <p>{{ str_limit($headline->condo, 50) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -33,7 +34,23 @@
         @endif
         <hr color="#c0c0c0">
         <div class="row">
-            <div class="posts col-md-8 mx-auto mt-3">
+            <div class="card-group col-md-10 mx-auto">
+             @foreach($posts as $post)
+              <div class="card">
+                @if ($post->image_path)
+                    <img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap">
+                @endif
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                <div class="card-footer">
+                  <a class="btn btn-primary" href="#" role="button">Link</a>
+                </div>
+              </div>
+             @endforeach
+            </div>
+            <!--<div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
                     <div class="post">
                         <div class="row">
@@ -57,8 +74,7 @@
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
-            </div>
+            </div>-->
         </div>
-    </div>
     </div>
 @endsection

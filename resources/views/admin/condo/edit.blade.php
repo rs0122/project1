@@ -39,6 +39,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2" for="plan">間取り</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="plan" value="{{ $condo_form->plan }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="old">築年数</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="old" value="{{ $condo_form->old }}">

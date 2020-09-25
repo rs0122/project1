@@ -32,9 +32,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('condo/create', 'Admin\CondoController@add');
     Route::post('condo/create', 'Admin\CondoController@create');
     Route::get('condo', 'Admin\CondoController@index');
-    Route::get('condo/edit', 'Admin\Controller@edit');
-    Route::post('condo/edit', 'Admin\Controller@update');
-    Route::get('condo/delete', 'Admin\Controller@delete');
+    Route::get('condo/edit', 'Admin\CondoController@edit');
+    Route::post('condo/edit', 'Admin\CondoController@update');
+    Route::get('condo/delete', 'Admin\CondoController@delete');
 });
 
 Route::get('/condo', 'CondoController@index');

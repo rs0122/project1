@@ -72,7 +72,7 @@ class CondoController extends Controller
         unset($condo_form['image']);
       } elseif (isset($request->remove)) {
         $condos->image_path = null;
-        unset($news_form['remove']);
+        unset($condo_form['remove']);
       }
       unset($condo_form['_token']);
 
