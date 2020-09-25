@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        <div class="row">
+            <div class="top-wrapper col-md-12 mx-auto">
+                <h1>販売物件一覧</h1>
+            </div>
+        </div>
         <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
@@ -15,7 +20,7 @@
                                     @endif
                                 </div>
                                 <div class="condo p-2">
-                                    <h1>{{ str_limit($headline->condo, 20) }}</h1>
+                                    <h2>{{ str_limit($headline->condo, 20) }}</h2>
                                 </div>
                             </div>
                         </div>
