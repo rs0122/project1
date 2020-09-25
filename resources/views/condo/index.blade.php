@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="top-wrapper col-md-12 mx-auto">
-                <h1>販売物件一覧</h1>
+                <h1>For Sale!</h1>
             </div>
         </div>
         <hr color="#c0c0c0">
         @if (!is_null($headline))
             <div class="row">
-                <div class="headline col-md-12 mx-auto">
+                <div class="new-condo col-md-12 mx-auto">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">
@@ -25,8 +25,36 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <p class="place mx-auto">{{ str_limit($headline->place, 650) }}</p>
+                        <div class="new-info col-md-6">
+                            <h3>Information</h3>
+                            <table class="table table-bordered">
+                              <tbody>
+                                <tr>
+                                  <th scope="col" class="table-active">物件名</th>
+                                  <td>{{ str_limit($headline->condo, 50) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">販売価格</th>
+                                  <td>{{ str_limit($headline->price, 50) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">アクセス</th>
+                                  <td>{{ str_limit($headline->place, 50) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">専有面積</th>
+                                  <td>{{ str_limit($headline->area, 50) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">間取り</th>
+                                  <td>{{ str_limit($headline->plan, 50) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">築年数</th>
+                                  <td>{{ str_limit($headline->old, 50) }}</td>
+                                </tr>
+                              </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -41,11 +69,26 @@
                     <img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap">
                 @endif
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title">{{ str_limit($post->condo, 50) }}</h5>
+                  <table class="table condo-table table-borderless table-sm">
+                              <tbody>
+                                <tr>
+                                  <th scope="col" class="table-active">物件名</th>
+                                  <td>{{ str_limit($post->condo, 30) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">販売価格</th>
+                                  <td>{{ str_limit($post->price, 10) }}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="table-active">アクセス</th>
+                                  <td>{{ str_limit($post->place, 30) }}</td>
+                                </tr>
+                              </tbody>
+                   </table>
                 </div>
                 <div class="card-footer">
-                  <a class="btn btn-primary" href="#" role="button">Link</a>
+                  <a class="btn btn-primary " href="#" role="button">物件詳細</a>
                 </div>
               </div>
              @endforeach

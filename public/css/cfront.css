@@ -51,25 +51,25 @@ body {
   height: 82px;
 }
 
-.headline .caption {
+.new-condo .caption {
   position: relative;
   width: 350px;
 }
-.headline .caption .image img {
+.new-condo .caption .image img {
   width: 100%;
 }
-.headline .caption .title {
+.new-condo .caption .title {
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.headline .caption .title h3 {
+.new-condo .caption .condo p {
   color: #fff;
   font-size: 1.2em;
 }
-.headline .caption .body {
+.new-condo .caption .body {
   font-size: 0.8em;
 }
 
@@ -162,7 +162,7 @@ body {
     text-align: center;
 }
 
-/*.top-wrapper{
+.top-wrapper{
     margin-top: 15px;
 }
 
@@ -171,6 +171,14 @@ body {
     height: 180px;
 }
 
-.headline h3{
+.new-condo .new-info h3{
     margin-bottom: 20px;
-}*/
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.condo-table {
+    font-size: 15px;
+}
