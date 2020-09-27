@@ -55,6 +55,13 @@
                                 </tr>
                               </tbody>
                             </table>
+                            <div>
+                            　@if($headline->is_liked_by_auth_user())
+                                <a href="{{ route('condo.unlike', ['id' => $headline->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $headline->likes->count() }}</span></a>
+                              @else
+                                <a href="{{ route('condo.like', ['id' => $headline->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $headline->likes->count() }}</span></a>
+                              @endif
+                            </div>
                         </div>
                     </div>
                 </div>

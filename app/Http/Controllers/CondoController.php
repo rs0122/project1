@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
+use Illuminate\Support\Facades\Auth;
 
 use App\Condo;
+use App\Like;
 
 class CondoController extends Controller
 {
@@ -22,6 +24,33 @@ class CondoController extends Controller
         
         return view('condo.index', ['headline' => $headline, 'posts' => $posts]);
         
+    }
+    
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified'])->only(['like', 'unlike']);
+    }
+  
+    public function like($id)
+    {
+     Like::create([
+       'condo_id' => $id,
+       'user_id' => Auth::id(),
+        ]);
+
+        session()->flash('success', '物件をお気に入りしました。');
+
+        return redirect()->back();
+    }
+    
+    public function unlike($id)
+    {
+        $like = Like::where('condo_id', $id)->where('user_id', Auth::id())->first();
+        $like->delete();
+
+        session()->flash('success', 'お気に入りを削除しました。');
+
+        return redirect()->back();
     }
     
 }

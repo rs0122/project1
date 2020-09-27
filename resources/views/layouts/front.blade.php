@@ -75,7 +75,11 @@
 </nav>
                    
                 
-            
+            @if (session('success'))
+            <div class="flash_message bg-success text-center py-3 my-0">
+                {{ session('success') }}
+            </div>
+            @endif
             <main class="main-content">
                 @yield('content')
             </main>

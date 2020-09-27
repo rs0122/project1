@@ -1,21 +1,10 @@
-body {
-  color: #000;
-}
-
-.header {
-  .logo {
-      width: 120px;
-      height: 82px;
-  }
-}
-
-.headline {
+.new-condo {
   .caption {
     position: relative;
     width: 350px;
     .image {
       img {
-    width: 100%;
+        width: 100%;
       }
     }
     .title {
@@ -24,38 +13,37 @@ body {
       bottom: 0;
       left: 0;
       background-color: rgba(0, 0, 0, 0.6);
-      h1 {
-    color: #fff;
-    font-size: 1.2em;
+    }
+    .condo {
+      p {
+        color: #fff;
+        font-size: 1.2em;
       }
     }
     .body {
       font-size: 0.8em;
     }
   }
-}
-
-.posts {
-  .post {
-    .date {
-      font-size: 0.6em;
-      color: #999999;
-    }
-    .title {
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .body {
-      font-size: 0.8em;
-    }
-    .image {
-      img {
-    width: 250px;
-      }
+  .new-info {
+    h3 {
+      margin-bottom: 20px;
     }
   }
 }
 
-.top-wrapper{
-    margin-top: 10px;
+.top-wrapper {
+  margin-top: 15px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.condo-table {
+    font-size: 15px;
 }

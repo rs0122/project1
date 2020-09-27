@@ -1,5 +1,6 @@
 body {
   color: #000;
+  background-color: #947A6D;
 }
 
 .header {
@@ -25,8 +26,8 @@ body {
       left: 0;
       background-color: rgba(0, 0, 0, 0.6);
       h1 {
-    color: #fff;
-    font-size: 1.2em;
+        color: #fff;
+        font-size: 1.2em;
       }
     }
     .body {
@@ -56,16 +57,111 @@ body {
   }
 }
 
-#mainVideo{
- position: absolute;
- left: 0;
- top: 0;
- /*min-width: 100%;
- min-height: 100%;
- width: auto;
- height: auto;*/
- width: 100%;
- height: 100%;
- z-index: -100;
- display: block;
-}
+.mainvidulal{
+    position: relative;
+    text-align: center;
+    #mainVideo{
+       left: 0;
+       top: 0;
+       /*min-width: 100%;
+       min-height: 100%;
+       width: auto;
+       height: auto;*/
+       width: 100%;
+       height: 100%;
+       z-index: -100;
+       display: block;
+       }
+    .top-message{
+       position: absolute;
+       z-index: 2;
+       display: block;
+       width: 100%;
+       top: 50%;
+       text-align: center;
+       justify-content: center;
+       margin: auto;
+       color: #ffffff;
+      }
+      .php-email-form {
+       position: absolute;
+       z-index: 2;
+       display: block;
+       width: 100%;
+       top: 60%;
+       text-align: center;
+       justify-content: center;
+       margin: auto;
+       color: #ffffff;
+      }
+  }
+  
+  .contents {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    .col-md-3 {
+        padding: 15px 0;
+    }
+    .col-md-12 {
+        margin: 0 15px;
+    }
+    item {
+        position: relative;
+    }
+    .item {
+      .logo {
+        img {
+          display: flex;
+          justify-content: center;
+          cursor: pointer;
+          width: 80px;
+          height: 45px;
+          opacity: 0.7;
+          
+          position: absolute;
+          top: 74%;
+          left: 77%;
+        }
+      }
+    }
+    
+    .item{
+      &:hover {
+      opacity: 0.7;
+      } 
+    }
+    
+    .pp {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 40px;
+    }
+    
+    .ppp {
+      text-align: center;
+    }
+    
+    span {
+      text-align: center;
+    }
+  }
+  
+  .text-center {
+    margin-top: 10px;
+  }
+  
+  .collapse {
+    .navbar-nav {
+      .new-register {
+        font-size: 5px;
+      }
+      .regis {
+        color: blue;
+      }
+      .login-form {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
