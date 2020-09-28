@@ -36,4 +36,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function join_likes_condos()
+    {
+        return $this->hasManyThrough(
+            'App\Condo', //リレーションして取りたいテーブル「photos」
+            'App\Like', //経由するテーブル「favorites」
+            'user_id', //favoritesテーブルをusersテーブルと結ぶための外部キー
+            'id', // photosテーブルの外部キー
+            null, // usersテーブルのローカルキー
+            'condo_id' //favoritesとphotosを結ぶために使うキー
+        );
+    }
+    
 }

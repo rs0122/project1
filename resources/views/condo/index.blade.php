@@ -100,31 +100,30 @@
               </div>
              @endforeach
             </div>
-            <!--<div class="posts col-md-8 mx-auto mt-3">
-                @foreach($posts as $post)
-                    <div class="post">
-                        <div class="row">
-                            <div class="text col-md-6">
-                                <div class="date">
-                                    {{ $post->updated_at->format('Y年m月d日') }}
-                                </div>
-                                <div class="title">
-                                    {{ str_limit($post->condo, 150) }}
-                                </div>
-                                <div class="body mt-3">
-                                    {{ str_limit($post->place, 1500) }}
-                                </div>
-                            </div>
-                            <div class="image col-md-6 text-right mt-4">
-                                @if ($post->image_path)
-                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    <hr color="#c0c0c0">
-                @endforeach
-            </div>-->
+            <div class="row">
+    <div class="col-md-12 mx-auto">
+        <h1>My Page</h1>
+    </div>
+    <div class="favorite">
+        <h2>My favorite</h2>
+        <div class="gallery flex border mb-4 p-2">
+          @foreach ($posts as $post)
+          <div class="fcondo border mb-4 p-2">
+            <a href="/condo/{{ $post->id }}">
+              <div class="img_cover">
+                <img src="{{ asset('storage/image/' . $post->image_path) }}" />
+              </div>
+            </a>
+            <div class="flex space-between bottom-imginfo">
+              <div>
+                <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+    </div>
+</div>
         </div>
     </div>
 @endsection
