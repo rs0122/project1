@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 });
 
 Route::get('/condo', 'CondoController@index');
+Route::get('/mypage', 'CondoController@add');
 
 Route::get('/condo/like/{id}', 'CondoController@like')->name('condo.like');
 Route::get('/condo/unlike/{id}', 'CondoController@unlike')->name('condo.unlike');

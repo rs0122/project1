@@ -97,6 +97,13 @@
                 <div class="card-footer">
                   <a class="btn btn-primary " href="#" role="button">物件詳細</a>
                 </div>
+                <div>
+                　@if($post->is_liked_by_auth_user())
+                    <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+                  @else
+                    <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+                  @endif
+                </div>
               </div>
              @endforeach
             </div>
@@ -107,16 +114,16 @@
     <div class="favorite">
         <h2>My favorite</h2>
         <div class="gallery flex border mb-4 p-2">
-          @foreach ($posts as $post)
+          @foreach ($user->join_likes_condos() as $condo)
           <div class="fcondo border mb-4 p-2">
-            <a href="/condo/{{ $post->id }}">
+            <a href="/condo/{{ $condo->id }}">
               <div class="img_cover">
-                <img src="{{ asset('storage/image/' . $post->image_path) }}" />
+                <img src="{{ asset('storage/image/' . $condo->image_path) }}" />
               </div>
             </a>
             <div class="flex space-between bottom-imginfo">
               <div>
-                <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+                <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
               </div>
             </div>
           </div>

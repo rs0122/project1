@@ -8,12 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Condo;
 use App\Like;
+use App\User;
 
 class CondoController extends Controller
 {
     //
-    public function index(Request $request)
+    public function index(Request $request, User $user)
     {
+        $user = Auth::user();
         $posts = Condo::all()->sortByDesc('updated_at');
         
         if (count($posts) > 0) {
@@ -22,7 +24,7 @@ class CondoController extends Controller
             $headline = null;
         }
         
-        return view('condo.index', ['headline' => $headline, 'posts' => $posts]);
+        return view('condo.index', ['headline' => $headline, 'posts' => $posts, 'user' => $user]);
         
     }
     
@@ -52,5 +54,11 @@ class CondoController extends Controller
 
         return redirect()->back();
     }
+    
+    public function add()
+    {
+        return view('info.mypage');
+    }
+    
     
 }
