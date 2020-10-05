@@ -55,9 +55,10 @@ class CondoController extends Controller
         return redirect()->back();
     }
     
-    public function add()
+    public function add(User $user)
     {
-        return view('info.mypage');
+        $user = Auth::user();
+        return view('info.mypage', ['user' => $user]);
     }
     
     

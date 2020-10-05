@@ -69,8 +69,8 @@
         @endif
         <hr color="#c0c0c0">
         <div class="row">
-            <div class="card-group col-md-10 mx-auto">
-             @foreach($posts as $post)
+          @foreach($posts as $post)
+            <div class="col-md-3 mt-3">
               <div class="card">
                 @if ($post->image_path)
                     <img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap">
@@ -96,8 +96,6 @@
                 </div>
                 <div class="card-footer">
                   <a class="btn btn-primary " href="#" role="button">物件詳細</a>
-                </div>
-                <div>
                 　@if($post->is_liked_by_auth_user())
                     <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
                   @else
@@ -105,32 +103,10 @@
                   @endif
                 </div>
               </div>
-             @endforeach
-            </div>
-            <div class="row">
-    <div class="col-md-12 mx-auto">
-        <h1>My Page</h1>
-    </div>
-    <div class="favorite">
-        <h2>My favorite</h2>
-        <div class="gallery flex border mb-4 p-2">
-          @foreach ($user->join_likes_condos() as $condo)
-          <div class="fcondo border mb-4 p-2">
-            <a href="/condo/{{ $condo->id }}">
-              <div class="img_cover">
-                <img src="{{ asset('storage/image/' . $condo->image_path) }}" />
-              </div>
-            </a>
-            <div class="flex space-between bottom-imginfo">
-              <div>
-                <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
+                </div>
+              @endforeach
               </div>
             </div>
-          </div>
-          @endforeach
-        </div>
-    </div>
-</div>
         </div>
     </div>
 @endsection
