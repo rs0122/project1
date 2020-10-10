@@ -25,7 +25,8 @@ class InfoController extends Controller
     
      public function map(Request $request)
     {
-        return view('info.map');
+        
+        return view('info.map', ['keyword' => $request->keyword]);
     }
     
 }

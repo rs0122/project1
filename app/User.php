@@ -53,4 +53,10 @@ class User extends Authenticatable
        
     }
     
+    public function userhistories()
+    {
+      return $this->hasMany('App\UserHistory');
+
+    }
+    
 }

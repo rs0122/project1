@@ -10,7 +10,7 @@
                     @csrf
                     <div class="row no-gutters">
                       <div class="col-md-6 form-group mx-auto">
-                        <input type="text" name="name" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <input type="text" name="keyword" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                         <div class="text-center">
                             <input type="submit" class="btn-dark" id="search" value="Search!">
