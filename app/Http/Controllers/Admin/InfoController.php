@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Information;
 use Carbon\Carbon;
 use App\History;
+use App\User;
 
 class InfoController extends Controller
 {
@@ -91,5 +92,17 @@ class InfoController extends Controller
         return redirect('admin/info/');
     }
     
+    public function user(Request $request)
+    {
+        $user_name = $request->name;
+        if ($user_name != '') {
+            // 検索されたら検索結果を取得する
+            $users = User::where('name', $user_name)->get();
+        } else {
+            // それ以外はすべてのニュースを取得する
+            $users = User::all();
+        }
+        return view('admin.user.index', ['users' => $users, 'user_name' => $user_name]);
+    }
     
 }

@@ -39,3 +39,7 @@
 .condo-table {
   font-size: 15px;
 }
+
+.map-image:hover {
+  opacity: 0.7;
+}

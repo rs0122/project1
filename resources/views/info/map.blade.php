@@ -12,23 +12,28 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
        name: 'ローレルコート西宮北口',
        lat: 34.750529,
-        lng: 135.354885
+        lng: 135.354885,
+        image: '<a href="#"><img src ="storage/ローレルコート西宮北口.jpg" style="width: 150px; height: 120px;" class="map-image"></a>'
  }, {
         name: 'ルネグラン西宮北口昭和園',
      lat: 34.746234,
-        lng: 135.352181
+        lng: 135.352181,
+        image: '<a href="#"><img src ="storage/ルネグラン西宮北口昭和園.jpg" style="width: 150px; height: 120px;" class="map-image"></a>'
  }, {
         name: 'ジオ・ウェリス西宮北口',
      lat: 34.743775,
-      lng: 135.353924
+      lng: 135.353924,
+      image: '<a href="#"><img src ="storage/ジオ・ウェリス西宮北口.jpg" style="width: 150px; height: 120px; class="map-image"></a>'
  }, {
         name: 'ジオ西宮北口クラウンズ',
         lat: 34.746571,
-        lng: 135.365352
+        lng: 135.365352,
+        image: '<a href="#"><img src ="storage/ジオ西宮北口クラウンズ.jpg" style="width: 150px; height: 120px; class="map-image"></a>'
  }, {
         name: 'ジオ西宮北口ガーデンズ',
      lat: 34.740184,
-     lng: 135.354505
+     lng: 135.354505,
+     image: '<a href="#"><img src ="storage/ジオ西宮北口ガーデンズ.jpg" style="width: 150px; height: 120px; class="map-image"></a>'
  }
 ];
 
@@ -55,7 +60,7 @@ var address = document.getElementById('keyword').value;
   
          var map = new google.maps.Map(target, {  
            center: results[0].geometry.location,
-           zoom: 18
+           zoom: 17
          });
   
          var marker = new google.maps.Marker({
@@ -78,7 +83,7 @@ var address = document.getElementById('keyword').value;
        });
        
        infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-         content: '<div class="sample">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+         content: '<div class="sample">' + markerData[i]['name'] + '</div>' + markerData[i]['image'] // 吹き出しに表示する内容
        });
        
        markerEvent(i);
@@ -95,6 +100,7 @@ var address = document.getElementById('keyword').value;
 
 
 </script>
+
 <script src="//maps.google.com/maps/api/js?key=AIzaSyCJzlLTLYrvAyFJOe6htRitJDAUSNlQViw&callback=initMap"></script>
 
 @endsection

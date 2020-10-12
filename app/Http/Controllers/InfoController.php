@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\HTML;
 
+use App\Condo;
 use App\Information;
 
 class InfoController extends Controller
@@ -25,8 +26,8 @@ class InfoController extends Controller
     
      public function map(Request $request)
     {
-        
         return view('info.map', ['keyword' => $request->keyword]);
     }
+    
     
 }

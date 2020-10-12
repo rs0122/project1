@@ -41,12 +41,15 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
     
-    protected function authenticated(Request $request, $user, $userhistory)
+    protected function authenticated(Request $request, $time)
     {
-        $user = Auth::user();
+        $time->last_login_at = Carbon::now();
+        $time->save();
+        
         $userhistory = new UserHistory;
         $userhistory->user_id = $user->id;
         $userhistory->logined_at = Carbon::now();
         $userhistory->save();
     }
+    
     }
