@@ -61,5 +61,8 @@ class CondoController extends Controller
         return view('info.mypage', ['user' => $user]);
     }
     
-    
+    public function condo1()
+    {
+        return view('condo.condo1');
+    }
 }
