@@ -13,7 +13,7 @@ class CreateUserhistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('userhistories', function (Blueprint $table) {
+        Schema::create('user_histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('logined_at');
@@ -28,6 +28,6 @@ class CreateUserhistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userhistories');
+        Schema::dropIfExists('user_histories');
     }
 }
