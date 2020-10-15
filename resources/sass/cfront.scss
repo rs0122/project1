@@ -52,11 +52,13 @@
     opacity: 0.7;
   }
   
-  .slider{
-    margin: 100px auto;
+  .slider,
+.thumb{
+    margin: 20px auto;
     width: 80%;
 }
-.slider img{
+.slider img,
+.thumb img{
     height: auto;
     width: 100%;
 }
