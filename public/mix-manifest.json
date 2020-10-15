@@ -3,5 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/front.css": "/css/front.css",
-    "/css/cfront.css": "/css/cfront.css"
+    "/css/cfront.css": "/css/cfront.css",
+    "/css/slick-theme.css": "/css/slick-theme.css",
+    "/css/slick.css": "/css/slick.css"
 }

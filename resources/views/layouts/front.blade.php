@@ -12,11 +12,10 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/front.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/cfront.css') }}" rel="stylesheet">
-        <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
-        <script type="text/javascript" src="./js/jquery-migrate-1.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
         <script type="text/javascript" src="./js/slick.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="./css/slick.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="./css/slick-theme.css" media="screen" />
+        <link href="{{ secure_asset('css/slick-theme.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/slick.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">

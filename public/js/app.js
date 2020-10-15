@@ -37181,10 +37181,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/slick-theme.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/slick-theme.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/slick.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/slick.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!**************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin.scss ./resources/sass/front.scss ./resources/sass/cfront.scss ***!
-  \**************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin.scss ./resources/sass/front.scss ./resources/sass/cfront.scss ./resources/sass/slick-theme.scss ./resources/sass/slick.scss ***!
+  \****************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37192,7 +37214,9 @@ __webpack_require__(/*! /home/ec2-user/environment/project1/resources/js/app.js 
 __webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/admin.scss */"./resources/sass/admin.scss");
 __webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/front.scss */"./resources/sass/front.scss");
-module.exports = __webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/cfront.scss */"./resources/sass/cfront.scss");
+__webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/cfront.scss */"./resources/sass/cfront.scss");
+__webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/slick-theme.scss */"./resources/sass/slick-theme.scss");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/project1/resources/sass/slick.scss */"./resources/sass/slick.scss");
 
 
 /***/ })

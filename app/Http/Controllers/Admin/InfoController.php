@@ -9,6 +9,7 @@ use App\Information;
 use Carbon\Carbon;
 use App\History;
 use App\User;
+use App\UserHistory;
 
 class InfoController extends Controller
 {
@@ -97,12 +98,13 @@ class InfoController extends Controller
         $user_name = $request->name;
         if ($user_name != '') {
             // 検索されたら検索結果を取得する
-            $users = User::where('name', $user_name)->get();
+            $userhistories = UserHistory::where('name', $user_name)->get();
         } else {
             // それ以外はすべてのニュースを取得する
-            $users = User::all();
+            $userhistories = UserHistory::all();
         }
-        return view('admin.user.index', ['users' => $users, 'user_name' => $user_name]);
+        
+        return view('admin.user.index', ['userhistories' => $userhistories, 'user_name' => $user_name]);
     }
     
 }

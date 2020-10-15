@@ -35,11 +35,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $user)
+                            @foreach($userhistories as $userhistory)
                                 <tr>
-                                    <th>{{ $user->id }}</th>
-                                    <td>{{ \Str::limit($user->name, 20) }}</td>
-                                    <td>{{ \Str::limit($user->last_login_at, 20) }}</td>
+                                    <th>{{ $userhistory->id }}</th>
+                                    <td>{{ \Str::limit($userhistory->name, 20) }}</td>
+                                    <td>{{ \Str::limit($userhistory->logined_at, 20) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

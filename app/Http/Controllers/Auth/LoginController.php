@@ -48,6 +48,7 @@ class LoginController extends Controller
         
         $userhistory = new UserHistory;
         $userhistory->user_id = $user->id;
+        $userhistory->name = $user->name;
         $userhistory->logined_at = Carbon::now();
         $userhistory->save();
     }
