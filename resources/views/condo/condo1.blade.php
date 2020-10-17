@@ -3,24 +3,24 @@
 @section('content')
 <div class="row">
      <div class="col-md-12 mx-auto">
-        <h1 class="condo-name"></h1>
+        <h1 class="condo-name">{{ $condo->condo }}</h1>
     </div>
 </div>
 <div class="row">
     <div class="condo-images col-md-6">
         <ul class="slider">
-            <li><a href="{{ url('/condo1') }}"><img src="storage/ローレルコート西宮北口.jpg" alt="image01"></a></li>
-            <li><a href="#"><img src="storage/ルネグラン西宮北口昭和園.jpg" alt="image02"></a></li>
-            <li><a href="#"><img src="storage/ジオ・ウェリス西宮北口.jpg" alt="image03"></a></li>
-            <li><a href="#"><img src="storage/ジオ西宮北口クラウンズ.jpg" alt="image04"></a></li>
-            <li><a href="#"><img src="storage/ジオ西宮北口ガーデンズ.jpg" alt="image05"></a></li>
+            <li><a href="{{ url('/condo1') }}"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image01"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image02"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image03"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image04"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image05"></a></li>
         </ul>
         <ul class="thumb">
-            <li><a href="#"><img src="storage/ローレルコート西宮北口.jpg" alt="image01"></a></li>
-            <li><a href="#"><img src="storage/ルネグラン西宮北口昭和園.jpg" alt="image02"></a></li>
-            <li><a href="#"><img src="storage/ジオ・ウェリス西宮北口.jpg" alt="image03"></a></li>
-            <li><a href="#"><img src="storage/ジオ西宮北口クラウンズ.jpg" alt="image04"></a></li>
-            <li><a href="#"><img src="storage/ジオ西宮北口ガーデンズ.jpg" alt="image05"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image01"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image02"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image03"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image04"></a></li>
+            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image05"></a></li>
         </ul>
         <script type="text/javascript">
             $('.slider').slick({
@@ -34,6 +34,10 @@
                 slidesToScroll:1
             });
         </script>
+    </div>
+    <div class="condo-description col-md-6">
+        <h2>～マンション概要～</h2>
+        <p class="comment">{{ $condo->description }}</p>
     </div>
 </div>
 

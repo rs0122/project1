@@ -13,7 +13,7 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
        name: 'ローレルコート西宮北口',
        lat: 34.750529,
         lng: 135.354885,
-        image: '<a href="#"><img src ="storage/ローレルコート西宮北口.jpg" style="width: 150px; height: 120px;" class="map-image"></a>'
+        image: '<a href="/condo1"><img src ="storage/ローレルコート西宮北口.jpg" style="width: 150px; height: 120px;" class="map-image"></a>'
  }, {
         name: 'ルネグラン西宮北口昭和園',
      lat: 34.746234,

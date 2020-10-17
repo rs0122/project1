@@ -61,8 +61,9 @@ class CondoController extends Controller
         return view('info.mypage', ['user' => $user]);
     }
     
-    public function condo1()
+    public function condo1(Request $request)
     {
-        return view('condo.condo1');
+        $condo = Condo::find($request->id);
+        return view('condo.condo1',['condo' => $condo]);
     }
 }

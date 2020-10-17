@@ -30,7 +30,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">所在地・沿線/駅</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="place" rows="20">{{ old('place') }}</textarea>
+                            <textarea class="form-control" name="place" rows="3">{{ old('place') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -49,6 +49,12 @@
                         <label class="col-md-2">築年月日</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="old" value="{{ old('old') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">マンション概要</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="description" rows="10">{{ old('description') }}</textarea>
                         </div>
                     </div>
                     <div class="form-group row">

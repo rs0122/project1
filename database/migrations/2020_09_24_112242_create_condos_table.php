@@ -21,6 +21,7 @@ class CreateCondosTable extends Migration
             $table->string('area');
             $table->string('plan');
             $table->string('old');
+            $table->text('description');
             $table->string('image_path')->nullable();
             $table->timestamps();
         });

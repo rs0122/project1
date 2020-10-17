@@ -51,6 +51,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2" for="description">マンション概要</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" name="description" rows="20">{{ old('description') }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="image">外観写真</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">

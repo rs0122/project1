@@ -95,7 +95,7 @@ class InfoController extends Controller
     
     public function user(Request $request)
     {
-        $user_name = $request->name;
+        $user_name = $request->user_name;
         if ($user_name != '') {
             // 検索されたら検索結果を取得する
             $userhistories = UserHistory::where('name', $user_name)->get();
