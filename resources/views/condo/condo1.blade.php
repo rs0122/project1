@@ -40,5 +40,50 @@
         <p class="comment">{{ $condo->description }}</p>
     </div>
 </div>
+<hr color="#dcdcdc">
+<div class="row">
+    <div class="sales col-md-12 mx-auto">
+        <h3>販売物件</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="box8 col-lg-10 mx-auto border mb-4 p-2">
+        <div class="row">
+            <div class="sale-image col-md-4">
+                <img src="{{ asset('storage/image/' . $condo->image_path) }}">
+            </div>
+            <div class="salespoint col-md-8">
+                <table class="table condo-table table-borderless">
+                  <tbody>
+                    <tr>
+                      <th scope="col" class="table-active">物件名</th>
+                      <td>{{ str_limit($condo->condo, 30) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">販売価格</th>
+                      <td>{{ str_limit($condo->price, 10) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">アクセス</th>
+                      <td>{{ str_limit($condo->place, 80) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">専有面積</th>
+                      <td>{{ str_limit($condo->area, 30) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">間取り</th>
+                      <td>{{ str_limit($condo->plan, 80) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">築年数</th>
+                      <td>{{ str_limit($condo->old, 80) }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

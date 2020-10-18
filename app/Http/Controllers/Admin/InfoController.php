@@ -46,7 +46,7 @@ class InfoController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $post = Information::where('title', $cond_title)->get();
+            $post = Information::where('title','like','%'.$cond_title.'%')->get();
         } else {
             $posts = Information::all();
         }
@@ -98,7 +98,7 @@ class InfoController extends Controller
         $user_name = $request->user_name;
         if ($user_name != '') {
             // 検索されたら検索結果を取得する
-            $userhistories = UserHistory::where('name', $user_name)->get();
+            $userhistories = UserHistory::where('name','like','%'.$user_name.'%')->get();
         } else {
             // それ以外はすべてのニュースを取得する
             $userhistories = UserHistory::all();

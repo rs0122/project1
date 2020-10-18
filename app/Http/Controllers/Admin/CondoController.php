@@ -40,7 +40,7 @@ class CondoController extends Controller
       $cond_condo = $request->cond_condo;
       if ($cond_condo != '') {
           // 検索されたら検索結果を取得する
-          $posts = Condo::where('condos', $cond_condo)->get();
+          $posts = Condo::where('condo','like','%'.$cond_condo.'%')->get();
       } else {
           // それ以外はすべてのニュースを取得する
           $posts = Condo::all();
