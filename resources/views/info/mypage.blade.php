@@ -1,8 +1,9 @@
 @extends('layouts.front')
 
 @section('content')
+<div class="container">
 <div class="row">
-    <div class="col-md-12 mx-auto">
+    <div class="top-wrapper col-md-12 mx-auto">
         <h1>My Page</h1>
     </div>
 </div>
@@ -16,29 +17,50 @@
 <hr color="#c0c0c0">
 <div class="row">
     <div class="favorite col-md-12 mx-auto">
-        <h2>My favorite</h2>
-        <div class="gallery flex border mb-4 p-2">
-          @foreach ($user->join_likes_condos() as $condo)
-          <div class="fcondo border mb-4 p-2">
-            <a href="/condo/{{ $condo->id }}">
-              <div class="img_cover">
-                <img src="{{ asset('storage/image/' . $condo->image_path) }}" />
-              </div>
-            </a>
-            <div class="flex space-between bottom-imginfo">
-              <div>
-                <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
-              </div>
-            </div>
-          </div>
-          @endforeach
-        </div>
+      <h2>My favorite</h2>
     </div>
+    @foreach ($user->join_likes_condos() as $condo)
+    <div class="col-md-3 mt-3">
+      <div class="card">
+      @if ($condo->image_path)
+        <a href="{{ action('CondoController@condo1', ['id' => $condo->id]) }}"><img class="card-img-top" src="{{ asset('storage/image/' . $condo->image_path) }}" alt="Card image cap"></a>
+      @endif
+        <div class="card-body">
+          <h5 class="card-title">{{ str_limit($condo->condo, 50) }}</h5>
+          <table class="table condo-table table-borderless table-sm">
+            <tbody>
+              <tr>
+                <th scope="col" class="table-active">物件名</th>
+                <td>{{ str_limit($condo->condo, 30) }}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-active">販売価格</th>
+                <td>{{ str_limit($condo->price, 10) }}</td>
+              </tr>
+              <tr>
+                <th scope="row" class="table-active">アクセス</th>
+                <td>{{ str_limit($condo->place, 30) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer">
+          <a class="btn btn-primary" href="{{ action('CondoController@condo1', ['id' => $condo->id]) }}" role="button">物件詳細</a>
+        　@if($condo->is_liked_by_auth_user())
+          <a href="{{ route('condo.unlike', ['id' => $condo->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
+          @else
+          <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
+          @endif
+        </div>
+      </div>
+    </div>
+  @endforeach
 </div>
 <hr color="#c0c0c0">
 <div class="row">
     <div class="fav-column col-md-12 mx-auto">
         <h2>favorite column</h2>
     </div>
+</div>
 </div>
 @endsection

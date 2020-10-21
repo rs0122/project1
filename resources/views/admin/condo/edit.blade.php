@@ -51,6 +51,42 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2" for="floor">階数</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="floor" value="{{ $condo_form->floor }}">
+                        </div>
+                    </div>
+                        <div class="form-group row">
+                        <label class="col-md-2" for="direction">向き</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="direction" value="{{ $condo_form->direction }}">
+                        </div>
+                    </div>
+                        <div class="form-group row">
+                        <label class="col-md-2" for="expense">管理費</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="expense" value="{{ $condo_form->expense }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="fix">修繕積立金</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="fix" value="{{ $condo_form->fix }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="lat">緯度</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="lat" value="{{ $condo_form->lat }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2" for="lng">経度</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="lng" value="{{ $condo_form->lng }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="description">マンション概要</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="description" rows="20">{{ old('description') }}</textarea>

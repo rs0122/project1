@@ -52,6 +52,42 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2">階数</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="floor" value="{{ old('floor') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">向き</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="direction" value="{{ old('direction') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">管理費</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="expense" value="{{ old('expense') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">修繕積立金</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="fix" value="{{ old('fix') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">緯度</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="lat" value="{{ old('lat') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2">経度</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="lng" value="{{ old('lng') }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2">マンション概要</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="description" rows="10">{{ old('description') }}</textarea>

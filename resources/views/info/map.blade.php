@@ -1,9 +1,15 @@
 @extends('layouts.front')
 
 @section('content')
-<input type="text" id="keyword" value="{{ $keyword }}"><button id="search">検索実行</button>
-<button id="clear">結果クリア</button>
+<div class="container">
+<div class="row">
+    <div class="search col-10-md">
+        <h1>Search</h1>
+        <input type="text" id="keyword" value="{{ $keyword }}"><button id="search">検索実行</button>
+        <button id="clear">結果クリア</button>
+    </div>
 <div id="map"></div>
+</div>
 
 <script>
 var infoWindow = [];
@@ -102,6 +108,8 @@ var address = document.getElementById('keyword').value;
 </script>
 
 <script src="//maps.google.com/maps/api/js?key=AIzaSyCJzlLTLYrvAyFJOe6htRitJDAUSNlQViw&callback=initMap"></script>
+
+</div>
 
 @endsection
 

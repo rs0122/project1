@@ -1,6 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
+<div class="container">
 <div class="row">
      <div class="col-md-12 mx-auto">
         <h1 class="condo-name">{{ $condo->condo }}</h1>
@@ -79,11 +80,27 @@
                       <th scope="row" class="table-active">築年数</th>
                       <td>{{ str_limit($condo->old, 80) }}</td>
                     </tr>
+                    <tr>
+                      <th scope="row" class="table-active">階数</th>
+                      <td>{{ str_limit($condo->floor, 80) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">向き</th>
+                      <td>{{ str_limit($condo->direction, 80) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">管理費</th>
+                      <td>{{ str_limit($condo->expense, 80) }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="table-active">修繕積立金</th>
+                      <td>{{ str_limit($condo->fix, 80) }}</td>
+                    </tr>
                   </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 @endsection

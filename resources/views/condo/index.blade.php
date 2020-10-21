@@ -17,7 +17,7 @@
                                 <div class="image">
                                     @if ($headline->image_path)
                                         <h2>New!</h2>
-                                        <a href="{{ action('CondoController@condo1', ['id' => $headline->id]) }}"><img src="{{ asset('storage/image/' . $headline->image_path) }}"></a>
+                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
                                     @endif
                                 </div>
                                 <div class="condo p-2">
@@ -56,6 +56,7 @@
                               </tbody>
                             </table>
                             <div>
+                              <a href="{{ action('CondoController@condo1', ['id' => $headline->id]) }}" class="btn btn-primary" role="button">物件詳細</a>
                             　@if($headline->is_liked_by_auth_user())
                                 <a href="{{ route('condo.unlike', ['id' => $headline->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $headline->likes->count() }}</span></a>
                               @else
@@ -73,7 +74,7 @@
             <div class="col-md-3 mt-3">
               <div class="card">
                 @if ($post->image_path)
-                    <a href="{{ action('CondoController@condo1', ['id' => $post->id]) }}"><img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap"></a>
+                    <img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap">
                 @endif
                 <div class="card-body">
                   <h5 class="card-title">{{ str_limit($post->condo, 50) }}</h5>
@@ -95,7 +96,7 @@
                    </table>
                 </div>
                 <div class="card-footer">
-                  <a class="btn btn-primary " href="#" role="button">物件詳細</a>
+                  <a class="btn btn-primary" href="{{ action('CondoController@condo1', ['id' => $post->id]) }}" role="button">物件詳細</a>
                 　@if($post->is_liked_by_auth_user())
                     <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
                   @else
@@ -108,5 +109,5 @@
               </div>
             </div>
         </div>
-    </div>
+      </div>
 @endsection

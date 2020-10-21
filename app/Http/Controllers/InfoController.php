@@ -26,7 +26,8 @@ class InfoController extends Controller
     
      public function map(Request $request)
     {
-        return view('info.map', ['keyword' => $request->keyword]);
+        $condos = Condo::all();
+        return view('info.map', ['keyword' => $request->keyword, 'condos' => $condos]);
     }
     
     
