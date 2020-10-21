@@ -102,6 +102,7 @@
                         </div>
                     </div>
                     <hr color="#c0c0c0">
+                    @break($post->number == 2)
                 @endforeach
             </div>
         </div>

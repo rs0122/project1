@@ -47,9 +47,9 @@
         <div class="card-footer">
           <a class="btn btn-primary" href="{{ action('CondoController@condo1', ['id' => $condo->id]) }}" role="button">物件詳細</a>
         　@if($condo->is_liked_by_auth_user())
-          <a href="{{ route('condo.unlike', ['id' => $condo->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
+          <a href="{{ route('condo.unlike', ['id' => $condo->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $condo->likes->count() }}</span></a>
           @else
-          <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $condo->likes->count() }}</span></a>
+          <a href="{{ route('condo.like', ['id' => $condo->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $condo->likes->count() }}</span></a>
           @endif
         </div>
       </div>

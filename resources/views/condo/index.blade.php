@@ -58,9 +58,9 @@
                             <div>
                               <a href="{{ action('CondoController@condo1', ['id' => $headline->id]) }}" class="btn btn-primary" role="button">物件詳細</a>
                             　@if($headline->is_liked_by_auth_user())
-                                <a href="{{ route('condo.unlike', ['id' => $headline->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $headline->likes->count() }}</span></a>
+                                <a href="{{ route('condo.unlike', ['id' => $headline->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $headline->likes->count() }}</span></a>
                               @else
-                                <a href="{{ route('condo.like', ['id' => $headline->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $headline->likes->count() }}</span></a>
+                                <a href="{{ route('condo.like', ['id' => $headline->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $headline->likes->count() }}</span></a>
                               @endif
                             </div>
                         </div>
@@ -98,9 +98,9 @@
                 <div class="card-footer">
                   <a class="btn btn-primary" href="{{ action('CondoController@condo1', ['id' => $post->id]) }}" role="button">物件詳細</a>
                 　@if($post->is_liked_by_auth_user())
-                    <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+                    <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
                   @else
-                    <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
+                    <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
                   @endif
                 </div>
               </div>
