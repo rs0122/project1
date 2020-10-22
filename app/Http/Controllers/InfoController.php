@@ -39,6 +39,11 @@ class InfoController extends Controller
         return view('info.map', ['keyword' => $request->keyword, 'condos' => $condos]);
     }
     
+    public function column()
+    {
+        return view('info.column');
+    }
+    
      public function like($id)
     {
         InfoLike::create([

@@ -43,6 +43,9 @@
                 <a class="dropdown-item" href="{{ url('/map') }}">地図から検索</a>
             </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('/column') }}">Column</a>
+            </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto"></ul>
