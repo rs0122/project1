@@ -48,3 +48,5 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::get('/condo/like/{id}', 'CondoController@like')->name('condo.like');
 Route::get('/condo/unlike/{id}', 'CondoController@unlike')->name('condo.unlike');
+Route::get('/info/like/{id}', 'InfoController@like')->name('info.like');
+Route::get('/info/unlike/{id}', 'InfoController@unlike')->name('info.unlike');
