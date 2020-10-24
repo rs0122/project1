@@ -1,56 +1,58 @@
 @extends('layouts.front')
 
 @section('content')
-<div class="row">
-    <div class="column col-md-12 mx-auto">
-        <h1>～Column～</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="pickup-contents-box animate col-lg-12">
-        <div class="row">
-            <ul class="pickup-contents">
-                <li>
-                    <a href="#">
-                        <div class="pickup-image col-md-3">
-                            <img src="storage/house.jpg" width="269" height="151">
-                            <div class="pickup-title ef">不動産購入</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <ul class="pickup-contents">
-                <li>
-                    <a href="#">
-                        <div class="pickup-image col-md-3">
-                            <img src="storage/money.jpg" width="269" height="151">
-                            <div class="pickup-title ef">不動産購入</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <ul class="pickup-contents">
-                <li>
-                    <a href="#">
-                        <div class="pickup-image col-md-3">
-                            <img src="storage/contract.jpg" width="269" height="151">
-                            <div class="pickup-title ef">不動産購入</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <ul class="pickup-contents">
-                <li>
-                    <a href="#">
-                        <div class="pickup-image col-md-3">
-                            <img src="storage/others.jpg" width="269" height="151">
-                            <div class="pickup-title ef">不動産購入</div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+<div class="container">
+    <div class="row">
+        <div class="column col-md-12 mx-auto">
+            <h1>～Column～</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="pickup-contents-box col-md-12">
+            <div class="row">
+                <div class="pickup-image col-md-3">
+                    <a href="#">
+                        <img src="storage/house.jpg"　width="269"　height="151">
+                        <div class="pickup-title">不動産購入・売却<br>のポイント</div>
+                    </a>
+                </div>
+                <div class="pickup-image col-md-3"　width="269"　height="151">
+                    <a href="#">
+                        <img src="storage/money.jpg">
+                        <div class="pickup-title">【みんなが知りたい】<br>住宅ローン・税金情報</div>
+                    </a>
+                </div>
+                <div class="pickup-image col-md-3"　width="269"　height="151">
+                    <a href="#">
+                        <img src="storage/contract.jpg">
+                        <div class="pickup-title">契約上での注意点</div>
+                    </a>
+                </div>
+                <div class="pickup-image col-md-3">
+                    <a href="#">
+                        <img src="storage/others.jpg"　width="269"　height="151">
+                        <div class="pickup-title">購入後のおすすめコラム</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (!is_null($headline))
+    <div class="row">
+        <div class="column-top col-md-12 mx-auto">
+            <img src="storage/Newアイコン.png" class="new-icon">
+            <p>{{ $headline->updated_at->format('Y年m月d日') }}</p>
+            <h2>{{ str_limit($headline->title, 70) }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column-list col-md-10 mx-auto">
+            <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+            <p>{{ $headline->body }}</p>
+        </div>
+    </div>
+    @endif
+    <hr color="#c0c0c0">
 </div>
 
 

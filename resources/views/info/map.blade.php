@@ -12,9 +12,10 @@
 </div>
 
 <script>
+
 var infoWindow = [];
 var condomarker = [];
-var markerData = [ // マーカーを立てる場所名・緯度・経度
+/*var markerData = [ // マーカーを立てる場所名・緯度・経度
   {
        name: 'ローレルコート西宮北口',
        lat: 34.750529,
@@ -41,7 +42,7 @@ var markerData = [ // マーカーを立てる場所名・緯度・経度
      lng: 135.354505,
      image: '<a href="#"><img src ="storage/ジオ西宮北口ガーデンズ.jpg" style="width: 150px; height: 120px; class="map-image"></a>'
  }
-];
+];*/
 
   document.addEventListener('DOMContentLoaded', function(){
       initMap();
@@ -68,32 +69,48 @@ var address = document.getElementById('keyword').value;
            center: results[0].geometry.location,
            zoom: 17
          });
-  
-         var marker = new google.maps.Marker({
+        var markerD = [];
+
+  // DB情報の取得(ajax)
+      $(function(){
+        $.ajax({
+          type: "GET",
+          url: "api/condos",
+          dataType: "json",
+          success: function(data){
+            markerD = data;
+            setMarker(markerD);
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('Error : ' + errorThrown);
+          }
+        });
+      });
+        /* var marker = new google.maps.Marker({
            position: results[0].geometry.location,
            map: map,
            animation: google.maps.Animation.DROP
-         });
+         });*/
       }else{ 
         //住所が存在しない場合の処理
         alert('住所が正しくないか存在しません。');
         target.style.display='none';
       }
       
-      for (var i = 0; i < markerData.length; i++) {
+     /* for (var i = 0; i < markerData.length; i++) {
         var markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
         condomarker[i] = new google.maps.Marker({ // マーカーの追加
          position: markerLatLng, // マーカーを立てる位置を指定
             map: map, // マーカーを立てる地図を指定
             icon: 'storage/ビルのアイコン素材 その2 (1).png',//マーカー画像URL
-       });
+       }); 
        
        infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
          content: '<div class="sample">' + markerData[i]['name'] + '</div>' + markerData[i]['image'] // 吹き出しに表示する内容
        });
        
        markerEvent(i);
-           }
+           } */
            
     });
     
@@ -102,7 +119,58 @@ var address = document.getElementById('keyword').value;
       infoWindow[i].open(map, condomarker[i]); // 吹き出しの表示
   });
 }
+
+
  }
+ 
+
+      function setMarker(markerData) {
+        var map;
+        var marker = [];
+        var infoWindow = [];
+        // console.log(markerData);
+        // console.log(markerData.length);
+
+        //マーカー生成
+        var sidebar_html = "";
+        var icon;
+
+        for (var i = 0; i < markerData.length; i++) {
+
+          var latNum = parseFloat(markerData[i]['lat']);
+          var lngNum = parseFloat(markerData[i]['lng']);
+
+          // マーカー位置セット
+          var markerLatLng = new google.maps.LatLng({
+            lat: latNum,
+            lng: lngNum
+          });
+          // マーカーのセット
+          marker[i] = new google.maps.Marker({
+            position: markerLatLng,          // マーカーを立てる位置を指定
+            map: map,          // マーカーを立てる地図を指定
+            animation: google.maps.Animation.DROP
+          });
+          // マーカーにクリックイベントを追加
+          markerEvent(i);
+        }
+    }
+    
+      var openWindow;
+
+      function markerEvent(i) {
+        marker[i].addListener('click', function() {
+          myclick(i);
+        });
+      }
+
+      function myclick(i) {
+        if(openWindow){
+          openWindow.close();
+        }
+        infoWindow[i].open(map, marker[i]);
+        openWindow = infoWindow[i];
+      }
 
 
 </script>

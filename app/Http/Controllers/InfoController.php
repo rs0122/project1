@@ -21,7 +21,7 @@ class InfoController extends Controller
     public function index(Request $request, User $user)
     {
         $user = Auth::user();
-        $posts = Information::all()->sortByDesc('updated_at');
+        $posts = Information::orderBy('updated_at', 'desc')->limit(3)->get();
         
         if (count($posts) > 0) {
             $headline = $posts->shift();
@@ -39,9 +39,17 @@ class InfoController extends Controller
         return view('info.map', ['keyword' => $request->keyword, 'condos' => $condos]);
     }
     
-    public function column()
+    public function column(Request $request, User $user)
     {
-        return view('info.column');
+        $user = Auth::user();
+        $posts = Information::all()->sortByDesc('updated_at');
+        
+        if (count($posts) > 0) {
+            $headline = $posts->shift();
+        } else {
+            $headline = null;
+        }
+        return view('info.column', ['headline' => $headline, 'posts' => $posts, 'user' => $user]);
     }
     
      public function like($id)
