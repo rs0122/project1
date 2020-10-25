@@ -50,7 +50,7 @@ class CondoController extends Controller
         $like = Like::where('condo_id', $id)->where('user_id', Auth::id())->first();
         $like->delete();
 
-        session()->flash('success', 'お気に入りを削除しました。');
+        session()->flash('success', 'お気に入り登録を解除しました。');
 
         return redirect()->back();
     }

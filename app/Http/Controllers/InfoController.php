@@ -59,7 +59,7 @@ class InfoController extends Controller
           'user_id' => Auth::id(),
         ]);
     
-        session()->flash('success', 'You Liked the Reply.');
+        session()->flash('success', 'お気に入りに登録しました。');
     
         return redirect()->back();
     }
@@ -75,7 +75,7 @@ class InfoController extends Controller
         $like = InfoLike::where('information_id', $id)->where('user_id', Auth::id())->first();
         $like->delete();
     
-        session()->flash('success', 'You Unliked the Reply.');
+        session()->flash('success', 'お気に入り登録を解除しました。');
     
         return redirect()->back();
     }

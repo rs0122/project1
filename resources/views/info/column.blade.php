@@ -48,11 +48,44 @@
     <div class="row">
         <div class="column-list col-md-10 mx-auto">
             <img src="{{ asset('storage/image/' . $headline->image_path) }}">
-            <p>{{ $headline->body }}</p>
+            <p>{!! nl2br(e($headline->body)) !!}</p>
         </div>
     </div>
-    @endif
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+          @if($headline->is_liked_by_auth_user())
+            <a href="{{ route('info.unlike', ['id' => $headline->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $headline->likes->count() }}</span></a>
+          @else
+            <a href="{{ route('info.like', ['id' => $headline->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $headline->likes->count() }}</span></a>
+          @endif
+        </div>
+    </div>
     <hr color="#c0c0c0">
+    @endif
+    @foreach($posts as $post)
+    <div class="row">
+        <div class="column-top col-md-12 mx-auto">
+            <p>{{ $post->updated_at->format('Y年m月d日') }}</p>
+            <h2>{{ str_limit($post->title, 70) }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column-list col-md-10 mx-auto">
+            <img src="{{ asset('storage/image/' . $post->image_path) }}">
+            <p>{!! nl2br(e($post->body)) !!}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+          @if($post->is_liked_by_auth_user())
+            <a href="{{ route('info.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
+          @else
+            <a href="{{ route('info.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
+          @endif
+        </div>
+    </div>
+    <hr color="#c0c0c0">
+    @endforeach
 </div>
 
 

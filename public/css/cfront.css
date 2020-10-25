@@ -167,3 +167,8 @@ ul {
   width: 100%;
   margin-bottom: 1rem;
 }
+
+.map-image {
+  width: 150px;
+  height: 120px;
+}

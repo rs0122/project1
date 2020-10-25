@@ -99,13 +99,6 @@
                                     <img src="{{ asset('storage/image/' . $post->image_path) }}">
                                 @endif
                             </div>
-                            <div>
-                              @if($post->is_liked_by_auth_user())
-                                <a href="{{ route('info.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
-                              @else
-                                <a href="{{ route('info.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">いいね<span class="badge">{{ $post->likes->count() }}</span></a>
-                              @endif
-                            </div>
                         </div>
                     </div>
                     <hr color="#c0c0c0">

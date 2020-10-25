@@ -5,9 +5,15 @@
 <div class="row">
     <div class="search col-10-md">
         <h1>Search</h1>
+        <p>※アイコンをクリックし、画像をクリックすると物件の詳細を確認できます。</p>
+    </div>
+</div>
+<div class="row">
+    <div class="search col-10-md">
         <input type="text" id="keyword" value="{{ $keyword }}"><button id="search">検索実行</button>
         <button id="clear">結果クリア</button>
     </div>
+</div>
 <div id="map"></div>
 </div>
 
@@ -55,6 +61,7 @@ function initMap() {
    showMap(); 
   });
 }
+ var map;
 function showMap() {
   var target = document.getElementById('map'); //マップを表示する要素を指定
 var address = document.getElementById('keyword').value;
@@ -63,9 +70,7 @@ var address = document.getElementById('keyword').value;
     geocoder.geocode({ address: address }, function(results, status){
       if (status === 'OK' && results[0]){
   
-        console.log(results[0].geometry.location);
-  
-         var map = new google.maps.Map(target, {  
+          map = new google.maps.Map(target, {  
            center: results[0].geometry.location,
            zoom: 17
          });
@@ -114,32 +119,29 @@ var address = document.getElementById('keyword').value;
            
     });
     
-    function markerEvent(i) {
+    /*function markerEvent(i) {
     condomarker[i].addListener('click', function() { // マーカーをクリックしたとき
       infoWindow[i].open(map, condomarker[i]); // 吹き出しの表示
   });
-}
+}*/
 
 
  }
  
-
+var marker = [];
       function setMarker(markerData) {
-        var map;
-        var marker = [];
-        var infoWindow = [];
         // console.log(markerData);
         // console.log(markerData.length);
 
         //マーカー生成
         var sidebar_html = "";
         var icon;
-
+          console.log(markerData);
         for (var i = 0; i < markerData.length; i++) {
-
+          
           var latNum = parseFloat(markerData[i]['lat']);
           var lngNum = parseFloat(markerData[i]['lng']);
-
+          //console.log(latNum);
           // マーカー位置セット
           var markerLatLng = new google.maps.LatLng({
             lat: latNum,
@@ -149,14 +151,21 @@ var address = document.getElementById('keyword').value;
           marker[i] = new google.maps.Marker({
             position: markerLatLng,          // マーカーを立てる位置を指定
             map: map,          // マーカーを立てる地図を指定
+            icon: 'storage/house-iconS.png',//マーカー画像URL
             animation: google.maps.Animation.DROP
           });
+          
+          infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+         content: '<div class="sample">' + markerData[i]['condo'] + '</div>' + "<a href='#'><img src={{ asset('storage/image/') }}/" + markerData[i]['image_path'] + ' class="map-image"></a>'// 吹き出しに表示する内容
+          });
+          
           // マーカーにクリックイベントを追加
           markerEvent(i);
         }
     }
     
       var openWindow;
+
 
       function markerEvent(i) {
         marker[i].addListener('click', function() {

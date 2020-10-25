@@ -43,15 +43,31 @@ class User extends Authenticatable
     {
         
        $condos = $this->hasManyThrough(
-            'App\Condo', //リレーションして取りたいテーブル「photos」
-            'App\Like', //経由するテーブル「favorites」
-            'user_id', //favoritesテーブルをusersテーブルと結ぶための外部キー
-            'id', // photosテーブルの外部キー
+            'App\Condo', //リレーションして取りたいテーブル「condos」
+            'App\Like', //経由するテーブル「likes」
+            'user_id', //likesテーブルをusersテーブルと結ぶための外部キー
+            'id', // condosテーブルの外部キー
             null, // usersテーブルのローカルキー
-            'condo_id' //favoritesとphotosを結ぶために使うキー
+            'condo_id' //likesとcondosを結ぶために使うキー
         )->get();
        
        return $condos;
+       
+    }
+    
+    public function join_likes_posts()
+    {
+        
+       $posts = $this->hasManyThrough(
+            'App\Information', //リレーションして取りたいテーブル「condos」
+            'App\InfoLike', //経由するテーブル「likes」
+            'user_id', //likesテーブルをusersテーブルと結ぶための外部キー
+            'id', // condosテーブルの外部キー
+            null, // usersテーブルのローカルキー
+            'information_id' //likesとcondosを結ぶために使うキー
+        )->get();
+       
+       return $posts;
        
     }
     
