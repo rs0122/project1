@@ -151,7 +151,7 @@ var marker = [];
           marker[i] = new google.maps.Marker({
             position: markerLatLng,          // マーカーを立てる位置を指定
             map: map,          // マーカーを立てる地図を指定
-            icon: 'storage/house-iconS.png',//マーカー画像URL
+            icon: '{{ secure_asset("background-image/house-iconS.png") }}',//マーカー画像URL
             animation: google.maps.Animation.DROP
           });
           

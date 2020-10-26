@@ -12,25 +12,25 @@
             <div class="row">
                 <div class="pickup-image col-md-3">
                     <a href="#">
-                        <img src="storage/house.jpg"　width="269"　height="151">
+                        <img src="{{ secure_asset('background-image/house.jpg') }}"　width="269"　height="151">
                         <div class="pickup-title">不動産購入・売却<br>のポイント</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3"　width="269"　height="151">
                     <a href="#">
-                        <img src="storage/money.jpg">
+                        <img src="{{ secure_asset('background-image/money.jpg') }}">
                         <div class="pickup-title">【みんなが知りたい】<br>住宅ローン・税金情報</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3"　width="269"　height="151">
                     <a href="#">
-                        <img src="storage/contract.jpg">
+                        <img src="{{ secure_asset('background-image/contract.jpg') }}">
                         <div class="pickup-title">契約上での注意点</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3">
                     <a href="#">
-                        <img src="storage/others.jpg"　width="269"　height="151">
+                        <img src="{{ secure_asset('background-image/others.jpg') }}"　width="269"　height="151">
                         <div class="pickup-title">購入後のおすすめコラム</div>
                     </a>
                 </div>
@@ -40,7 +40,7 @@
     @if (!is_null($headline))
     <div class="row">
         <div class="column-top col-md-12 mx-auto">
-            <img src="storage/Newアイコン.png" class="new-icon">
+            <img src="{{ secure_asset('background-image/New-icon.png') }}" class="new-icon">
             <p>{{ $headline->updated_at->format('Y年m月d日') }}</p>
             <h2>{{ str_limit($headline->title, 70) }}</h2>
         </div>

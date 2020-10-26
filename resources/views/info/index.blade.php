@@ -3,7 +3,7 @@
 @section('content')
         <div class="row">
             <div class="mainVidulal">
-                <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
+                <video id="mainVideo" src="{{ secure_asset('background-image/sample1.mp4') }}" loop autoplay muted></video>
             </div>
                 <h1 class="top-message">Let's start your new Life!</h1>
                 <form action="{{ action('InfoController@map') }}" method="post" enctype="multipart/form-data" class="php-email-form" role="search">
@@ -27,25 +27,25 @@
                 <div class="item col-md-3">
                     <a href="#"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
                     <div class="logo">
-                        <img src="storage/ジオロゴ.jpg">
+                        <img src="{{ secure_asset('background-image/geo-logo.jpg') }}">
                     </div>
                 </div>
                 <div class="item col-md-3">
-                    <a href="#"><img src="storage/パークハウス.jpg"></a>
+                    <a href="#"><img src="{{ secure_asset('background-image/parkhouse.jpg') }}"></a>
                     <div class="logo">
-                        <img src="storage/パークハウスロゴ.jpg">
+                        <img src="{{ secure_asset('background-image/parkhouse-logo.jpg') }}">
                     </div>
                 </div>
                 <div class="item col-md-3">
-                  <a href="#"><img src="storage/ブランズ.jpg"></a>
+                  <a href="#"><img src="{{ secure_asset('background-image/branz.jpg') }}"></a>
                   <div class="logo">
-                        <img src="storage/ブランズロゴ.jpg">
+                        <img src="{{ secure_asset('background-image/branz-logo.jpg') }}">
                     </div>
                  </div>
                  <div class="item col-md-3">
-                    <a href="#"><img src="storage/プラウド.jpg"></a>
+                    <a href="#"><img src="{{ secure_asset('background-image/proud.jpg') }}"></a>
                     <div class="logo">
-                        <img src="storage/プラウドロゴ.jpg">
+                        <img src="{{ secure_asset('background-image/proud-logo.jpg') }}">
                     </div>
                 </div>
                 </div>
