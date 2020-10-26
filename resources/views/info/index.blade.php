@@ -25,7 +25,7 @@
                 <p class="ppp">～人気マンション特集～</p>
                 <div class="row">
                 <div class="item col-md-3">
-                    <a href="#"><img src="storage/ジオ.jpg"></a>
+                    <a href="#"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
                     <div class="logo">
                         <img src="storage/ジオロゴ.jpg">
                     </div>
