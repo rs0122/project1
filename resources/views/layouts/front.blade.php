@@ -40,11 +40,8 @@
                 </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url('/condo') }}">販売物件一覧</a>
-                <a class="dropdown-item" href="{{ url('/map') }}">地図から検索</a>
+                <a class="dropdown-item" href="{{ url('/column') }}">コラム一覧</a>
             </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('/column') }}">Column</a>
             </li>
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

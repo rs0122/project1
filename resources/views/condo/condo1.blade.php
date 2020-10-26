@@ -10,18 +10,18 @@
 <div class="row">
     <div class="condo-images col-md-6">
         <ul class="slider">
-            <li><a href="{{ url('/condo1') }}"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image01"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image02"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image03"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image04"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image05"></a></li>
+            <li><a href="{{ url('/condo1') }}"><img src="{{ $condo->image_path }}" alt="image01"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image02"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image03"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image04"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image05"></a></li>
         </ul>
         <ul class="thumb">
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image01"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image02"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image03"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image04"></a></li>
-            <li><a href="#"><img src="{{ asset('storage/image/' . $condo->image_path) }}" alt="image05"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image01"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image02"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image03"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image04"></a></li>
+            <li><a href="#"><img src="{{ $condo->image_path }}" alt="image05"></a></li>
         </ul>
         <script type="text/javascript">
             $('.slider').slick({
@@ -51,7 +51,7 @@
     <div class="box8 col-lg-10 mx-auto border mb-4 p-2">
         <div class="row">
             <div class="sale-image col-md-4">
-                <img src="{{ asset('storage/image/' . $condo->image_path) }}">
+                <img src="{{ $condo->image_path }}">
             </div>
             <div class="salespoint col-md-8">
                 <table class="table condo-table table-borderless">

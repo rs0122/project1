@@ -5,7 +5,7 @@
             <div class="mainVidulal">
                 <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
             </div>
-                <h1 class="top-message">Let start your new Life!</h1>
+                <h1 class="top-message">Let's start your new Life!</h1>
                 <form action="{{ action('InfoController@map') }}" method="post" enctype="multipart/form-data" class="php-email-form" role="search">
                     @csrf
                     <div class="row no-gutters">
@@ -62,7 +62,7 @@
                             <div class="caption mx-auto">
                                 <div class="image">
                                     @if ($headline->image_path)
-                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+                                        <img src="{{ $headline->image_path }}">
                                     @endif
                                 </div>
                                 <div class="title p-2">
@@ -96,7 +96,7 @@
                             </div>
                             <div class="image col-md-6 text-right mt-4">
                                 @if ($post->image_path)
-                                    <img src="{{ asset('storage/image/' . $post->image_path) }}">
+                                    <img src="{{ $post->image_path }}">
                                 @endif
                             </div>
                         </div>

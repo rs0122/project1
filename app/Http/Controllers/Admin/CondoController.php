@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\Condo;
+use Storage;
 
 class CondoController extends Controller
 {
@@ -20,8 +20,11 @@ class CondoController extends Controller
         $form = $request->all();
         
         if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $condos->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $condos->image_path = Storage::disk('s3')->url($path);
+          
+        /*$path = $request->file('image')->store('public/image');
+        $condos->image_path = basename($path);*/
       } else {
           $condos->image_path = null;
       }
@@ -67,8 +70,11 @@ class CondoController extends Controller
       // 送信されてきたフォームデータを格納する
       $condo_form = $request->all();
       if (isset($condo_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $condos->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$condo_form['image'],'public');
+        $condos->image_path = Storage::disk('s3')->url($path);
+        
+        /*$path = $request->file('image')->store('public/image');
+        $condos->image_path = basename($path);*/
         unset($condo_form['image']);
       } elseif (isset($request->remove)) {
         $condos->image_path = null;

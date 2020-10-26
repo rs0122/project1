@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use App\History;
 use App\User;
 use App\UserHistory;
+use Storage;
 
 class InfoController extends Controller
 {
@@ -27,8 +28,11 @@ class InfoController extends Controller
         $form = $request->all();
         
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $information->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $information->image_path = Storage::disk('s3')->url($path);
+            
+            /*$path = $request->file('image')->store('public/image');
+            $information->image_path = basename($path);*/
         } else {
             $information->image_path = null;
         }
@@ -68,8 +72,11 @@ class InfoController extends Controller
         $information = Information::find($request->id);
         $information_form =$request->all();
         if (isset($information_form['image'])) {
-            $path = $request->file('image')->store('public/image');
-            $information ->image_path = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$information_form['image'],'public');
+            $information->image_path = Storage::disk('s3')->url($path);
+            
+            /*$path = $request->file('image')->store('public/image');
+            $information ->image_path = basename($path);*/
             unset($information_form['image']);
         } elseif (isset($request->remove)) {
             $information->image_path = null;

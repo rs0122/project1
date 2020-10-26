@@ -23,7 +23,7 @@
       <div class="col-md-3 mt-3">
         <div class="card">
         @if ($condo->image_path)
-          <a href="{{ action('CondoController@condo1', ['id' => $condo->id]) }}"><img class="card-img-top" src="{{ asset('storage/image/' . $condo->image_path) }}" alt="Card image cap"></a>
+          <a href="{{ action('CondoController@condo1', ['id' => $condo->id]) }}"><img class="card-img-top" src="{{ $condo->image_path }}" alt="Card image cap"></a>
         @endif
           <div class="card-body">
             <h5 class="card-title">{{ str_limit($condo->condo, 50) }}</h5>
@@ -71,7 +71,7 @@
     </div>
     <div class="row">
         <div class="column-list col-md-10 mx-auto">
-            <img src="{{ asset('storage/image/' . $post->image_path) }}">
+            <img src="{{ $post->image_path }}">
             <p>{!! nl2br(e($post->body)) !!}</p>
         </div>
     </div>

@@ -17,7 +17,7 @@
                                 <div class="image">
                                     @if ($headline->image_path)
                                         <h2>New!</h2>
-                                        <img src="{{ asset('storage/image/' . $headline->image_path) }}">
+                                        <img src="{{ $headline->image_path }}">
                                     @endif
                                 </div>
                                 <div class="condo p-2">
@@ -74,7 +74,7 @@
             <div class="col-md-3 mt-3">
               <div class="card">
                 @if ($post->image_path)
-                    <img class="card-img-top" src="{{ asset('storage/image/' . $post->image_path) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ $post->image_path }}" alt="Card image cap">
                 @endif
                 <div class="card-body">
                   <h5 class="card-title">{{ str_limit($post->condo, 50) }}</h5>

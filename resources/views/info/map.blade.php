@@ -156,7 +156,7 @@ var marker = [];
           });
           
           infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-         content: '<div class="sample">' + markerData[i]['condo'] + '</div>' + "<a href='#'><img src={{ asset('storage/image/') }}/" + markerData[i]['image_path'] + ' class="map-image"></a>'// 吹き出しに表示する内容
+         content: '<div class="sample">' + markerData[i]['condo'] + '</div>' + "<a href='#'><img src=" + markerData[i]['image_path'] + ' class="map-image"></a>'// 吹き出しに表示する内容
           });
           
           // マーカーにクリックイベントを追加
