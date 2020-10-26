@@ -5,7 +5,7 @@
             <div class="mainVidulal">
                 <video id="mainVideo" src="storage/sample1.mp4" loop autoplay muted></video>
             </div>
-                <h1 class="top-message">Let's start your new Life!</h1>
+                <h1 class="top-message">Let start your new Life!</h1>
                 <form action="{{ action('InfoController@map') }}" method="post" enctype="multipart/form-data" class="php-email-form" role="search">
                     @csrf
                     <div class="row no-gutters">
