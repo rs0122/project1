@@ -27,6 +27,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-2" for="tag">カテゴリー</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="tag" value="{{ $information_form->tag }}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-2" for="image">画像</label>
                         <div class="col-md-10">
                             <input type="file" class="form-control-file" name="image">

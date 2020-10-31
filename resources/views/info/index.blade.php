@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="row">
-            <div class="mainVidulal">
+            <div class="mainVidulal col-md-12">
                 <video id="mainVideo" src="{{ secure_asset('background-image/sample1.mp4') }}" loop autoplay muted></video>
             </div>
                 <h1 class="top-message">Let's start your new Life!</h1>
@@ -10,7 +10,7 @@
                     @csrf
                     <div class="row no-gutters">
                       <div class="col-md-6 form-group mx-auto">
-                        <input type="text" name="keyword" class="form-control" id="keyword" placeholder="Search:place" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                        <input type="text" name="keyword" class="form-control" id="keyword" placeholder="Search:place（例：西宮北口駅）" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                         <div class="text-center">
                             <input type="submit" class="btn-dark" id="search" value="Search!">
@@ -23,31 +23,35 @@
             <div class="contents col-md-12 mx-auto">
                 <p class="pp">Special feature</p>
                 <p class="ppp">～人気マンション特集～</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="row">
-                <div class="item col-md-3">
-                    <a href="#"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
-                    <div class="logo">
-                        <img src="{{ secure_asset('background-image/geo-logo.jpg') }}">
+                    <div class="item col-md-3">
+                        <a href="#"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
+                        <div class="logo">
+                            <img src="{{ secure_asset('background-image/geo-logo.jpg') }}">
+                        </div>
                     </div>
-                </div>
-                <div class="item col-md-3">
-                    <a href="#"><img src="{{ secure_asset('background-image/parkhouse.jpg') }}"></a>
-                    <div class="logo">
-                        <img src="{{ secure_asset('background-image/parkhouse-logo.jpg') }}">
+                    <div class="item col-md-3">
+                        <a href="#"><img src="{{ secure_asset('background-image/parkhouse.jpg') }}"></a>
+                        <div class="logo">
+                            <img src="{{ secure_asset('background-image/parkhouse-logo.jpg') }}">
+                        </div>
                     </div>
-                </div>
-                <div class="item col-md-3">
-                  <a href="#"><img src="{{ secure_asset('background-image/branz.jpg') }}"></a>
-                  <div class="logo">
-                        <img src="{{ secure_asset('background-image/branz-logo.jpg') }}">
+                    <div class="item col-md-3">
+                        <a href="#"><img src="{{ secure_asset('background-image/branz.jpg') }}"></a>
+                        <div class="logo">
+                            <img src="{{ secure_asset('background-image/branz-logo.jpg') }}">
+                        </div>
                     </div>
-                 </div>
-                 <div class="item col-md-3">
-                    <a href="#"><img src="{{ secure_asset('background-image/proud.jpg') }}"></a>
-                    <div class="logo">
-                        <img src="{{ secure_asset('background-image/proud-logo.jpg') }}">
+                    <div class="item col-md-3">
+                        <a href="#"><img src="{{ secure_asset('background-image/proud.jpg') }}"></a>
+                        <div class="logo">
+                            <img src="{{ secure_asset('background-image/proud-logo.jpg') }}">
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

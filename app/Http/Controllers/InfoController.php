@@ -42,7 +42,13 @@ class InfoController extends Controller
     public function column(Request $request, User $user)
     {
         $user = Auth::user();
-        $posts = Information::all()->sortByDesc('updated_at');
+        $tag = $request->tag;
+        if (strlen($tag) === 0) {
+            $posts = Information::all()->sortByDesc('updated_at');
+        } else {
+            $posts = Information::where('tag', $tag)->get()->sortByDesc('updated_at');
+        }
+        
         
         if (count($posts) > 0) {
             $headline = $posts->shift();

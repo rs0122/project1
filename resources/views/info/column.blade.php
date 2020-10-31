@@ -11,25 +11,25 @@
         <div class="pickup-contents-box col-md-12">
             <div class="row">
                 <div class="pickup-image col-md-3">
-                    <a href="#">
+                    <a href="/column?tag=売買">
                         <img src="{{ secure_asset('background-image/house.jpg') }}"　width="269"　height="151">
                         <div class="pickup-title">不動産購入・売却<br>のポイント</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3"　width="269"　height="151">
-                    <a href="#">
+                    <a href="/column?tag=お金">
                         <img src="{{ secure_asset('background-image/money.jpg') }}">
                         <div class="pickup-title">【みんなが知りたい】<br>住宅ローン・税金情報</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3"　width="269"　height="151">
-                    <a href="#">
+                    <a href="/column?tag=契約">
                         <img src="{{ secure_asset('background-image/contract.jpg') }}">
                         <div class="pickup-title">契約上での注意点</div>
                     </a>
                 </div>
                 <div class="pickup-image col-md-3">
-                    <a href="#">
+                    <a href="/column?tag=その他">
                         <img src="{{ secure_asset('background-image/others.jpg') }}"　width="269"　height="151">
                         <div class="pickup-title">購入後のおすすめコラム</div>
                     </a>
