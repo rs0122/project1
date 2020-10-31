@@ -15,7 +15,7 @@ class UpdateInformationTable extends Migration
     {
         Schema::table('information', function (Blueprint $table) {
             //
-            $table->string('tag');
+            $table->string('tag')->nullable();
         });
     }
 
