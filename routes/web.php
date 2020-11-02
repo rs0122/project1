@@ -41,6 +41,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 Route::get('/condo', 'CondoController@index');
 Route::get('/condo1', 'CondoController@condo1');
 Route::get('/column', 'InfoController@column');
+Route::get('/special1','CondoController@special1');
+Route::get('/special2','CondoController@special2');
+Route::get('/special3','CondoController@special3');
+Route::get('/special4','CondoController@special4');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/mypage', 'CondoController@add');

@@ -187,3 +187,15 @@ ul {
     width: 150px;
     height: 120px;
   }
+  
+  .special-image {
+    margin: 30px 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .special-message {
+    text-align: center;
+  }

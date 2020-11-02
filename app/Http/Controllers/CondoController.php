@@ -66,4 +66,25 @@ class CondoController extends Controller
         $condo = Condo::find($request->id);
         return view('condo.condo1',['condo' => $condo]);
     }
+    
+    public function special1()
+    {
+        return view('condo.special1');
+    }
+    
+    public function special2()
+    {
+        return view('condo.special2');
+    }
+    
+    public function special3()
+    {
+        return view('condo.special3');
+    }
+    
+    public function special4()
+    {
+        return view('condo.special4');
+    }
+    
 }

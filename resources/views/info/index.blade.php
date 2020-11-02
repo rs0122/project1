@@ -29,25 +29,25 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="item col-md-3">
-                        <a href="#"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
+                        <a href="/special1"><img src="{{ secure_asset('background-image/geo.jpg') }}"></a>
                         <div class="logo">
                             <img src="{{ secure_asset('background-image/geo-logo.jpg') }}">
                         </div>
                     </div>
                     <div class="item col-md-3">
-                        <a href="#"><img src="{{ secure_asset('background-image/parkhouse.jpg') }}"></a>
+                        <a href="/special2"><img src="{{ secure_asset('background-image/parkhouse.jpg') }}"></a>
                         <div class="logo">
                             <img src="{{ secure_asset('background-image/parkhouse-logo.jpg') }}">
                         </div>
                     </div>
                     <div class="item col-md-3">
-                        <a href="#"><img src="{{ secure_asset('background-image/branz.jpg') }}"></a>
+                        <a href="/special3"><img src="{{ secure_asset('background-image/branz.jpg') }}"></a>
                         <div class="logo">
                             <img src="{{ secure_asset('background-image/branz-logo.jpg') }}">
                         </div>
                     </div>
                     <div class="item col-md-3">
-                        <a href="#"><img src="{{ secure_asset('background-image/proud.jpg') }}"></a>
+                        <a href="/special4"><img src="{{ secure_asset('background-image/proud.jpg') }}"></a>
                         <div class="logo">
                             <img src="{{ secure_asset('background-image/proud-logo.jpg') }}">
                         </div>

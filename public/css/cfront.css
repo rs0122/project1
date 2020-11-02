@@ -172,3 +172,15 @@ ul {
   width: 150px;
   height: 120px;
 }
+
+.special-image {
+  margin: 30px 0;
+}
+.special-image img {
+  width: 100%;
+  height: auto;
+}
+
+.special-message {
+  text-align: center;
+}
