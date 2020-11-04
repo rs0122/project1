@@ -38,4 +38,10 @@ class Condo extends Model
       return false;
     }
   }
+  
+  public function posts()
+  {
+    return $this->hasMany(Post::class, 'condo_id');
+  }
+  
 } 

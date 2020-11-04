@@ -96,5 +96,17 @@ class CondoController extends Controller
       $condos->delete();
       return redirect('admin/condo/');
   }
+  
+  public function post($id)
+  {
+    Post::create([
+      'condo_id' => $id,
+      'user_id' => User::all(),
+      'from_user_id' => Auth::id()
+      ]);
+    
+    return redirect()->back(); 
+    
+  }
 
 }

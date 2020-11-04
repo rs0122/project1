@@ -55,3 +55,7 @@ Route::get('/condo/like/{id}', 'CondoController@like')->name('condo.like');
 Route::get('/condo/unlike/{id}', 'CondoController@unlike')->name('condo.unlike');
 Route::get('/info/like/{id}', 'InfoController@like')->name('info.like');
 Route::get('/info/unlike/{id}', 'InfoController@unlike')->name('info.unlike');
+
+Route::get('/user', 'UserController@index')->name('user.index')->middleware('auth');
+Route::get('/user/userEdit', 'UserController@userEdit')->name('user.userEdit')->middleware('auth');
+Route::post('/user/userEdit', 'UserController@userUpdate')->name('user.userUpdate')->middleware('auth');
