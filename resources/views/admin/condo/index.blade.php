@@ -42,8 +42,7 @@
                                 <th width="10%">向き</th>
                                 <th width="10%">管理費</th>
                                 <th width="10%">修繕積立金</th>
-                                <th width="20%">緯度</th>
-                                <th width="20%">経度</th>
+                                <th width="20%">ユーザー</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,8 +59,16 @@
                                     <td>{{ \Str::limit($condos->direction, 10) }}</td>
                                     <td>{{ \Str::limit($condos->expense, 10) }}</td>
                                     <td>{{ \Str::limit($condos->fix, 10) }}</td>
-                                    <td>{{ \Str::limit($condos->lat, 20) }}</td>
-                                    <td>{{ \Str::limit($condos->lng, 20) }}</td>
+                                    <td>
+                                        <form action="{{ action('Admin\CondoController@post') }}" method="post" enctype="multipart/form-data">
+                                            <select>
+                                                @foreach($users as $user)
+                                                <option>{{ $user->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input type="submit"name="submit"value="送信">
+                                        </form>
+                                    </td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\CondoController@edit', ['id' => $condos->id]) }}">編集</a>

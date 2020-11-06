@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\HTML;
+use Illuminate\Support\Facades\Auth;
 use App\Condo;
+use App\User;
+use App\Post;
 use Storage;
 
 class CondoController extends Controller
@@ -41,6 +45,7 @@ class CondoController extends Controller
     public function index(Request $request)
   {
       $cond_condo = $request->cond_condo;
+      $users = User::all();
       if ($cond_condo != '') {
           // 検索されたら検索結果を取得する
           $posts = Condo::where('condo','like','%'.$cond_condo.'%')->get();
@@ -48,7 +53,7 @@ class CondoController extends Controller
           // それ以外はすべてのニュースを取得する
           $posts = Condo::all();
       }
-      return view('admin.condo.index', ['posts' => $posts, 'cond_condo' => $cond_condo]);
+      return view('admin.condo.index', ['posts' => $posts, 'cond_condo' => $cond_condo, 'users' => $users]);
   }
   
   public function edit(Request $request)
@@ -97,16 +102,31 @@ class CondoController extends Controller
       return redirect('admin/condo/');
   }
   
-  public function post($id)
+  public function post($id, Request $request)
   {
+    
+    $condos_from_admin = Auth::user()->condoFromAdmin();
+    //condo_id=>$id user_id=>選択したuserを保存
     Post::create([
       'condo_id' => $id,
-      'user_id' => User::all(),
+      'user_id' => $request->all(),
       'from_user_id' => Auth::id()
       ]);
     
+    session()->flash('success', '送信しました。');
+    
     return redirect()->back(); 
     
+  }
+  
+  public function unpost($id, Request $request)
+  {
+    $post = Post::where('condo_id', $id)->where('user_id', $request->all())->where('from_user_id', Auth::id())->first();
+    $post->delete();
+    
+    session()->flash('success', '送信を取り消しました。');
+    
+    return redirect()->back();
   }
 
 }

@@ -59,12 +59,12 @@ class User extends Authenticatable
     {
         
        $posts = $this->hasManyThrough(
-            'App\Information', //リレーションして取りたいテーブル「condos」
-            'App\InfoLike', //経由するテーブル「likes」
-            'user_id', //likesテーブルをusersテーブルと結ぶための外部キー
-            'id', // condosテーブルの外部キー
+            'App\Information', //リレーションして取りたいテーブル「info」
+            'App\InfoLike', //経由するテーブル「infolikes」
+            'user_id', //infolikesテーブルをusersテーブルと結ぶための外部キー
+            'id', // infoテーブルの外部キー
             null, // usersテーブルのローカルキー
-            'information_id' //likesとcondosを結ぶために使うキー
+            'information_id' //infolikesとinfoを結ぶために使うキー
         )->get();
        
        return $posts;
@@ -75,6 +75,20 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\UserHistory');
 
+    }
+    
+    public function condoFromAdmin()
+    {
+        $condos = $this->hasManyThrough(
+            'App\Condo',
+            'App\Post',
+            'user_id',
+            'id',
+            null,
+            'condo_id'
+            )->get();
+            
+        return $condos;
     }
     
 }
