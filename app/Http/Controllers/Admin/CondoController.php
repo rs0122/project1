@@ -104,8 +104,6 @@ class CondoController extends Controller
   
   public function post($id, Request $request)
   {
-    
-    $condos_from_admin = Auth::user()->condoFromAdmin();
     //condo_id=>$id user_id=>選択したuserを保存
     Post::create([
       'condo_id' => $id,

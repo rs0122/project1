@@ -14,6 +14,44 @@
           <!--営業マンからの新着情報欄-->
       </div>
   </div>
+  <div class="row">
+    @foreach($user->condoFromAdmin() as $post)
+      <div class="col-md-3 mt-3">
+        <div class="card">
+          @if ($post->image_path)
+              <img class="card-img-top" src="{{ $post->image_path }}" alt="Card image cap">
+          @endif
+          <div class="card-body">
+            <h5 class="card-title">{{ str_limit($post->condo, 50) }}</h5>
+            <table class="table condo-table table-borderless table-sm">
+              <tbody>
+                <tr>
+                  <th scope="col" class="table-active">物件名</th>
+                  <td>{{ str_limit($post->condo, 30) }}</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="table-active">販売価格</th>
+                  <td>{{ str_limit($post->price, 10) }}</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="table-active">アクセス</th>
+                  <td>{{ str_limit($post->place, 30) }}</td>
+                </tr>
+              </tbody>
+             </table>
+          </div>
+          <div class="card-footer">
+            <a class="btn btn-primary" href="{{ action('CondoController@condo1', ['id' => $post->id]) }}" role="button">物件詳細</a>
+          　@if($post->is_liked_by_auth_user())
+              <a href="{{ route('condo.unlike', ['id' => $post->id]) }}" class="btn btn-success btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
+            @else
+              <a href="{{ route('condo.like', ['id' => $post->id]) }}" class="btn btn-secondary btn-sm">お気に入り<span class="badge">{{ $post->likes->count() }}</span></a>
+            @endif
+          </div>
+        </div>
+      </div>
+    @endforeach
+  </div>
   <hr color="#c0c0c0">
   <div class="row">
       <div class="favorite col-md-12 mx-auto">

@@ -60,13 +60,15 @@
                                     <td>{{ \Str::limit($condos->expense, 10) }}</td>
                                     <td>{{ \Str::limit($condos->fix, 10) }}</td>
                                     <td>
+                                        <!--condoのidとuserのidを送れるようにする-->
                                         <form action="{{ action('Admin\CondoController@post') }}" method="post" enctype="multipart/form-data">
                                             <select>
                                                 @foreach($users as $user)
                                                 <option>{{ $user->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <input type="submit"name="submit"value="送信">
+                                            {{ csrf_field() }}
+                                            <input type="submit" name="submit" value="送信">
                                         </form>
                                     </td>
                                     <td>

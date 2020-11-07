@@ -68,7 +68,7 @@
                 </div>
             </div>
         @endif
-        <hr color="#c0c0c0">
+        <hr color="#c0c0c0>
         <div class="row">
           @foreach($posts as $post)
             <div class="col-md-3 mt-3">
