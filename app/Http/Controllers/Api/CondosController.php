@@ -9,7 +9,7 @@ class CondosController extends Controller
 {
     public function index(Request $request)
     {
-        $query = DB::table('condos')->select('condo','image_path','lat', 'lng')->get();
+        $query = DB::table('condos')->select('id','condo','image_path','lat', 'lng')->get();
         return $query;
     }
 }

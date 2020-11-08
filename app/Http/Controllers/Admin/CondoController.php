@@ -102,12 +102,12 @@ class CondoController extends Controller
       return redirect('admin/condo/');
   }
   
-  public function post($id, Request $request)
+  public function post(Request $request)
   {
     //condo_id=>$id user_id=>選択したuserを保存
     Post::create([
-      'condo_id' => $id,
-      'user_id' => $request->all(),
+      'condo_id' => $request->id,
+      'user_id' => $request->user_id,
       'from_user_id' => Auth::id()
       ]);
     

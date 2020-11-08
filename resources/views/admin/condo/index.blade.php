@@ -62,9 +62,10 @@
                                     <td>
                                         <!--condoのidとuserのidを送れるようにする-->
                                         <form action="{{ action('Admin\CondoController@post') }}" method="post" enctype="multipart/form-data">
-                                            <select>
+                                            <input type="hidden" value="{{ $condos->id }}" name="id">
+                                            <select name="user_id">
                                                 @foreach($users as $user)
-                                                <option>{{ $user->name }}</option>
+                                                <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                 @endforeach
                                             </select>
                                             {{ csrf_field() }}
