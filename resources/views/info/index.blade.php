@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <p class="body mx-auto">{{ str_limit($headline->body, 650) }}</p>
+                            <p class="body mx-auto">{{ str_limit($headline->body, 300) }}...<a href="{{ action('InfoController@column') }}">コラム一覧を見る</a></p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                                     {{ str_limit($post->title, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($post->body, 1500) }}
+                                    {{ str_limit($post->body, 700) }}...<a href="{{ action('InfoController@column') }}">コラム一覧を見る</a>
                                 </div>
                             </div>
                             <div class="image col-md-6 text-right mt-4">

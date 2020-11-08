@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Condo;
 use App\Like;
 use App\User;
+use App\Post;
 
 class CondoController extends Controller
 {

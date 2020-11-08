@@ -85,7 +85,8 @@ class User extends Authenticatable
             'user_id',
             'id',
             null,
-            'condo_id'
+            'condo_id',
+            'from_user_id'
             )->get();
             
         return $condos;

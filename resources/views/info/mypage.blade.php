@@ -49,6 +49,9 @@
             @endif
           </div>
         </div>
+        <!--<div>
+          <p>{{ $post->from_user_id }}さんからのおすすめ物件です！</p>
+        </div>-->
       </div>
     @endforeach
   </div>
