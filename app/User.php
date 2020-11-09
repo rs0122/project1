@@ -79,17 +79,19 @@ class User extends Authenticatable
     
     public function condoFromAdmin()
     {
-        $condos = $this->hasManyThrough(
-            'App\Condo',
+        return $this->hasManyThrough(
+            'App\Condo',//繋げる先
             'App\Post',
             'user_id',
             'id',
             null,
-            'condo_id',
-            'from_user_id'
+            'condo_id'
             )->get();
-            
-        return $condos;
+    }
+    
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
     }
     
 }

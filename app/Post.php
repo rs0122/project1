@@ -19,6 +19,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
     
+    public function from_user()
+    {
+        return $this->belongsTo(User::class, 'from_user_id');
+    }
+    
     public function is_posted_by_auth_user()
     {
         $id = Auth::id();
